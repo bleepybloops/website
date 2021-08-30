@@ -1,0 +1,16 @@
+music
+tracks
+project file screenshots
+samples/plugins???
+tutorials
+
+art
+ai art gallery
+links to vqgan
+video explanation
+
+tech
+projects
+
+nature
+photos
