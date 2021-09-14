@@ -106,7 +106,7 @@
         .imageboard {
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             column-gap: 10px;
             row-gap: 10px;
         }
@@ -114,9 +114,8 @@
         .imageboard img {
             display: block;
             width: 100%;
-            height: auto;
+            aspect-ratio: 1;
             border-radius: 10px;
-            margin: 10px;
         }
 
         @media screen and (max-width: 600px) {
