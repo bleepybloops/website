@@ -103,6 +103,18 @@
             margin-bottom: 25px;
         }
 
+        .imageboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .imageboard img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
         @media screen and (max-width: 600px) {
             section {
                 width: 90%;
@@ -176,31 +188,16 @@
     </section>
 
     <section>
-        <h3>More Music</h3>
+        <h3>Pictures</h3>
 
-        <div class="soundcloud">
-            <iframe width="100%" height="200" scrolling="no" frameborder="no" allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1109227366&color=%239e00ff&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-            <div
-                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                <a href="https://soundcloud.com/bleepy-bloops" title="bleepy bloops" target="_blank"
-                    style="color: #cccccc; text-decoration: none;">bleepy bloops</a> · <a
-                    href="https://soundcloud.com/bleepy-bloops/to-be-continued" title="To Be Continued..."
-                    target="_blank" style="color: #cccccc; text-decoration: none;">To Be Continued...</a>
-            </div>
+        <div class="imageboard">
+            <img src="https://pbs.twimg.com/profile_images/1431216769465679878/65MYa5iL_400x400.jpg">
+            <img src="https://pbs.twimg.com/profile_images/1431216769465679878/65MYa5iL_400x400.jpg">
+            <img src="https://pbs.twimg.com/profile_images/1431216769465679878/65MYa5iL_400x400.jpg">
+            <img src="https://pbs.twimg.com/profile_images/1431216769465679878/65MYa5iL_400x400.jpg">
+
         </div>
 
-        <div class="soundcloud">
-            <iframe width="100%" height="200" scrolling="no" frameborder="no" allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1120170643&color=%239e00ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-            <div
-                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                <a href="https://soundcloud.com/bleepy-bloops" title="bleepy bloops" target="_blank"
-                    style="color: #cccccc; text-decoration: none;">bleepy bloops</a> · <a
-                    href="https://soundcloud.com/bleepy-bloops/kirby-space-house" title="kirby space house"
-                    target="_blank" style="color: #cccccc; text-decoration: none;">kirby space house</a>
-            </div>
-        </div>
     </section>
 
 </body>
