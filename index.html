@@ -233,8 +233,15 @@
             background: rgba(0, 0, 0, 0);
         }
 
-        audio::-webkit-media-controls-panel {
-            background: none;
+        audio::-webkit-media-controls-panel,
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display,
+        audio::-webkit-media-controls-timeline,
+        audio::-webkit-media-controls-volume-slider,
+        audio::-webkit-media-controls-mute-button {
+            background: #333;
+            color: white;
         }
     </style>
 </head>
