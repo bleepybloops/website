@@ -482,14 +482,15 @@
             }
             return false
         }
+
+        moonDropdown = document.querySelector(".moon-dropdown")
         document.addEventListener("click", function (e) {
-            moonDropdown = document.querySelector(".moon-dropdown")
-            // ignore clicks on children
-            if (isDescendant(moonDropdown, e.target)) return
-            // ignore clicks on self
+            // ignore if closed (so it can open)...
+            if (moonDropdown.classList.contains("hidden")) return
+            // ignore clicks on self...
             if (e.target.classList.contains("moon-dropdown")) return
-            // ignore clicks on open button
-            if (e.target.classList.contains("moon")) return
+            // ignore clicks on children...
+            if (isDescendant(moonDropdown, e.target)) return
             // otherwise, hide it
             moonDropdown.classList.add("hidden")
         })
