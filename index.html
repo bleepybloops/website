@@ -489,7 +489,9 @@
                 moonDropdown.classList.toggle('hidden')
                 return
             }
-            if (moonDropdown.classList.contains("hidden")) return
+            if (moonDropdown.classList.contains("hidden")) {
+                return
+            }
             if (!isDescendantOf(moonDropdown, e.target) && !e.target.classList.contains("moon") && !e.target.classList.contains("moon-dropdown")) {
                 moonDropdown.classList.add("hidden")
                 return
