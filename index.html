@@ -486,7 +486,7 @@
         moonDropdown = document.querySelector(".moon-dropdown")
         document.addEventListener("click", function (e) {
             console.log("click")
-            if (!isDescendant(moonDropdown, e.target)) {
+            if (!isDescendant(moonDropdown, e.target) && !e.target.classList.contains("moon")) {
                 console.log("not a descendant, should hide")
                 moonDropdown.classList.add("hidden")
                 return
