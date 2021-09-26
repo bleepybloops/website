@@ -299,9 +299,12 @@
         ctx = canvas.getContext("2d")
 
         particles = []
-
-        canvas.width = window.innerWidth
-        canvas.height = window.innerHeight
+        resize = () => {
+            canvas.width = window.innerWidth
+            canvas.height = window.innerHeight
+        }
+        window.onresize = resize
+        resize()
 
         initParticle = () => {
             return {
