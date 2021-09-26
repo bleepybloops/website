@@ -486,14 +486,14 @@
         moonDropdown = document.querySelector(".moon-dropdown")
         document.addEventListener("click", function (e) {
             console.log("click")
-            if (!isDescendant(moonDropdown, e.target) && !e.target.classList.contains("moon") && !e.target.classList.contains("moon-dropdown")) {
-                console.log("not dropdown, a descendant or moon, should hide")
-                moonDropdown.classList.add("hidden")
-                return
-            }
             if (e.target.classList.contains("moon")) {
                 console.log("clicked moon, should toggle")
                 moonDropdown.classList.toggle('hidden')
+                return
+            }
+            if (!isDescendant(moonDropdown, e.target) && !e.target.classList.contains("moon") && !e.target.classList.contains("moon-dropdown")) {
+                console.log("not dropdown, a descendant or moon, should hide")
+                moonDropdown.classList.add("hidden")
                 return
             }
         })
