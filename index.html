@@ -310,7 +310,7 @@
             return {
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                radius: Math.random() * window.innerWidth / 500,
+                radius: Math.random() * 1 + (window.innerWidth / 500),
                 alpha: Math.random() * 0.5,
                 dx: 0, //Math.random() - 0.5,
                 dy: Math.random() * 0.8, //Math.random() - 0.5,
