@@ -324,19 +324,21 @@
         setInterval(function () {
             ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-            for (particles in particles) {
-                particles[particles].alpha -= 0.01
-                particles[particles].x += particles[particles].dx
-                particles[particles].y += particles[particles].dy
+            for (p in particles) {
+                p.alpha -= 0.01
+                p.x += p.dx
+                p.y += p.dy
                 ctx.beginPath()
-                ctx.arc(particles[particles].x, particles[particles].y, particles[particles].radius, 0, Math.PI * 2, false)
-                ctx.fillStyle = "rgba(255, 255, 255, " + particles[particles].alpha + ")"
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2, false)
+                ctx.fillStyle = "rgba(255, 255, 255, " + p.alpha + ")"
                 ctx.fill()
-                if (particles[particles].alpha <= 0) {
-                    particles[particles].x = Math.random() * canvas.width
-                    particles[particles].y = Math.random() * canvas.height
-                    particles[particles].alpha = Math.random() * 0.4
-                    particles[particles].radius = Math.random() * 2.5
+                if (p.alpha <= 0) {
+                    p.alpha = 1
+                    p.x = Math.random() * canvas.width
+                    p.y = Math.random() * canvas.height
+                    p.dx = Math.random() * 2 - 1
+                    p.dy = Math.random() * 2 - 1
+                    p.radius = Math.random() * 2.5
                 }
             }
 
