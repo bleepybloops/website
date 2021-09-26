@@ -156,6 +156,7 @@
         }
 
         audio {
+            filter: invert();
             width: 100%;
         }
 
@@ -234,12 +235,6 @@
 
         ::-webkit-scrollbar-corner {
             background: rgba(0, 0, 0, 0);
-        }
-
-        audio::-webkit-media-controls-panel {
-            background: #888;
-            border: none;
-            outline: none;
         }
 
         /* audio::-webkit-media-controls-current-time-display,
