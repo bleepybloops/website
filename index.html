@@ -487,10 +487,12 @@
         document.addEventListener("click", function (e) {
             console.log("click")
             if (!isDescendant(moonDropdown, e.target)) {
+                console.log("not a descendant, should hide")
                 moonDropdown.classList.add("hidden")
                 return
             }
             if (e.target.classList.contains("moon")) {
+                console.log("clicked moon, should toggle")
                 moonDropdown.classList.toggle('hidden')
                 return
             }
