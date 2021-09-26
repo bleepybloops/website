@@ -307,7 +307,7 @@
             x = Math.random() * canvas.width
             y = Math.random() * canvas.height
             radius = Math.random() * 2.5
-            alpha = Math.random() * 0.4
+            alpha = Math.random() * 0.5
             dx = Math.random() * 2 - 1
             dy = Math.random() * 2 - 1
             particles.push({
@@ -333,7 +333,7 @@
                 ctx.fillStyle = "rgba(255, 255, 255, " + p.alpha + ")"
                 ctx.fill()
                 if (p.alpha <= 0) {
-                    p.alpha = 1
+                    p.alpha = 0.5
                     p.x = Math.random() * canvas.width
                     p.y = Math.random() * canvas.height
                     p.dx = Math.random() * 2 - 1
