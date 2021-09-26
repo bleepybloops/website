@@ -19,6 +19,7 @@
         }
 
         html {
+            z-index: -2;
             background: rgb(20, 11, 34);
         }
 
@@ -31,6 +32,7 @@
             flex-direction: column;
             color: white;
             background: black;
+            z-index: -1;
             background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgb(20, 11, 34) 100%);
             background-attachment: fixed;
         }
@@ -202,12 +204,12 @@
         }
 
         canvas {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             width: 100vh;
-            z-index: 0;
+            z-index: -1;
         }
     </style>
 </head>
