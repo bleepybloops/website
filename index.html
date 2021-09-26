@@ -474,7 +474,7 @@
             }
         }, 1000 / 60)
 
-        isDescendant = (parent, child) => {
+        isDescendantOf = (parent, child) => {
             node = child.parentNode
             while (node != null) {
                 if (node == parent) return true
@@ -488,12 +488,12 @@
 
         document.addEventListener("click", function (e) {
             console.log("click")
-            if (e.target.classList.contains("moon") || isDescendant(moon, e.target)) {
+            if (e.target.classList.contains("moon") || isDescendantOf(moon, e.target)) {
                 console.log("clicked moon, should toggle")
                 moonDropdown.classList.toggle('hidden')
                 return
             }
-            if (!isDescendant(moonDropdown, e.target) && !e.target.classList.contains("moon")) {
+            if (!isDescendantOf(moonDropdown, e.target) && !e.target.classList.contains("moon")) {
                 console.log("not dropdown, a descendant or moon, should hide")
                 moonDropdown.classList.add("hidden")
                 return
