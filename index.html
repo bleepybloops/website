@@ -208,7 +208,7 @@
             top: 0;
             left: 0;
             width: 100vw;
-            width: 100vh;
+            height: 100vh;
             /* z-index: -1; */
         }
     </style>
@@ -299,9 +299,6 @@
 
         canvas.width = window.innerWidth
         canvas.height = window.innerHeight
-
-        ctx.fillStyle = "red"
-        ctx.fillRect(0, 0, canvas.width, canvas.height)
 
         for (var i = 0; i < 100; i++) {
             x = Math.random() * canvas.width
