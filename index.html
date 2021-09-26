@@ -310,8 +310,8 @@
             y = Math.random() * canvas.height
             radius = Math.random() * 2.5
             alpha = Math.random() * 0.5
-            dx = Math.random() * 2 - 1
-            dy = Math.random() * 2
+            dx = Math.random() - 0.5
+            dy = Math.random() - 0.5
             particles.push({
                 x: x,
                 y: y,
@@ -338,8 +338,8 @@
                     particles[p].alpha = 0.5
                     particles[p].x = Math.random() * canvas.width
                     particles[p].y = Math.random() * canvas.height
-                    particles[p].dx = Math.random() * 2 - 1
-                    particles[p].dy = Math.random() * 2 - 1
+                    particles[p].dx = Math.random() - 0.5
+                    particles[p].dy = Math.random() - 0.5
                     particles[p].radius = Math.random() * 2.5
                 }
             }
