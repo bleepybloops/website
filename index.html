@@ -485,19 +485,15 @@
 
         moonDropdown = document.querySelector(".moon-dropdown")
         document.addEventListener("click", function (e) {
-            // toggle it open and closed
+            console.log("click")
+            if (!isDescendant(moonDropdown, e.target)) {
+                moonDropdown.classList.add("hidden")
+                return
+            }
             if (e.target.classList.contains("moon")) {
                 moonDropdown.classList.toggle('hidden')
                 return
             }
-            // ignore if closed (so it can open)...
-            if (moonDropdown.classList.contains("hidden")) return
-            // ignore clicks on self...
-            if (e.target.classList.contains("moon-dropdown")) return
-            // ignore clicks on children...
-            if (isDescendant(moonDropdown, e.target)) return
-            // otherwise, hide it
-            // moonDropdown.classList.add("hidden")
         })
     </script>
 
