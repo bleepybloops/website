@@ -299,6 +299,8 @@
         canvas = document.getElementById("bg")
         ctx = canvas.getContext("2d")
 
+        particles = []
+
         canvas.width = window.innerWidth
         canvas.height = window.innerHeight
 
@@ -311,7 +313,25 @@
             ctx.arc(x, y, radius, 0, Math.PI * 2, false)
             ctx.fillStyle = "rgba(255, 255, 255, " + alpha + ")"
             ctx.fill()
+
+            particles.push({
+                x: x,
+                y: y,
+                radius: radius,
+                alpha: alpha
+            })
         }
+
+        setInterval(function () {
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+            for (particles in particles) {
+                particles[particles].alpha -= 0.01
+                ctx.beginPath()
+                ctx.arc(particles[particles].x, particles[particles].y, particles[particles].radius, 0, Math.PI * 2, false)
+                ctx.fillStyle = "rgba(255, 255, 255, " + particles[particles].alpha + ")"
+                ctx.fill()
+            }
+        }, 1000 / 60)
     </script>
 
 </body>
