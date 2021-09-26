@@ -486,7 +486,7 @@
         moonDropdown = document.querySelector(".moon-dropdown")
         document.addEventListener("click", function (e) {
             console.log("click")
-            if (e.target.classList.contains("moon")) {
+            if (e.target.classList.contains("moon") || isDescendant(moon, e.target)) {
                 console.log("clicked moon, should toggle")
                 moonDropdown.classList.toggle('hidden')
                 return
