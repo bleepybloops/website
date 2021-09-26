@@ -303,7 +303,7 @@
         canvas.width = window.innerWidth
         canvas.height = window.innerHeight
 
-        for (var i = 0; i < 1000; i++) {
+        for (var i = 0; i < 100; i++) {
             x = Math.random() * canvas.width
             y = Math.random() * canvas.height
             radius = Math.random() * 2.5
@@ -324,6 +324,7 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height)
 
             for (p in particles) {
+                console.log(p)
                 p.alpha -= 0.01
                 p.x += p.dx
                 p.y += p.dy
