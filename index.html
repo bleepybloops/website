@@ -484,6 +484,8 @@
         }
 
         moonDropdown = document.querySelector(".moon-dropdown")
+        moon = document.querySelector(".moon")
+
         document.addEventListener("click", function (e) {
             console.log("click")
             if (e.target.classList.contains("moon") || isDescendant(moon, e.target)) {
