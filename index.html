@@ -325,7 +325,7 @@
 
     <canvas id="bg"></canvas>
 
-    <div class="moon" onclick="document.querySelector('.moon-dropdown').classList.toggle('hidden')">
+    <div class="moon">
         <img
             src="https://i.pinimg.com/favicons/c6d374efeef056c8853ed98f226330c1e02c803b79802bf0bffc99d3.ico?6bfc89dc7094dd5c8aa8a9ecb6bab083">
     </div>
@@ -485,6 +485,11 @@
 
         moonDropdown = document.querySelector(".moon-dropdown")
         document.addEventListener("click", function (e) {
+            // toggle it open and closed
+            if (e.target.classList.contains("moon")) {
+                moonDropdown.classList.toggle('hidden')
+                return
+            }
             // ignore if closed (so it can open)...
             if (moonDropdown.classList.contains("hidden")) return
             // ignore clicks on self...
