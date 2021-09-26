@@ -327,8 +327,6 @@
 <body>
 
     <canvas id="bg"></canvas>
-
-    <button class="moon">🌑</button>
     <div class="moon-dropdown hidden">
         <h3>iusgefiysef</h3>
         <input type="text" id="form" placeholder="form">
@@ -491,6 +489,7 @@
                 moonDropdown.classList.toggle('hidden')
                 return
             }
+            if (moonDropdown.classList.contains("hidden")) return
             if (!isDescendantOf(moonDropdown, e.target) && !e.target.classList.contains("moon") && !e.target.classList.contains("moon-dropdown")) {
                 moonDropdown.classList.add("hidden")
                 return
