@@ -328,7 +328,7 @@
 
     <canvas id="bg"></canvas>
 
-    <button class="moon">
+    <button class="moon" onclick="document.querySelector('moon-dropdown').classList.toggle('hidden')">
     </button>
     <div class="moon-dropdown hidden">
         <h3>iusgefiysef</h3>
@@ -488,10 +488,10 @@
         moon = document.querySelector(".moon")
 
         toggler = function (e) {
-            if (e.target.classList.contains("moon") || isDescendantOf(moon, e.target)) {
-                moonDropdown.classList.toggle('hidden')
-                return
-            }
+            // if (e.target.classList.contains("moon") || isDescendantOf(moon, e.target)) {
+
+            //     return
+            // }
             if (!isDescendantOf(moonDropdown, e.target) && !e.target.classList.contains("moon") && !e.target.classList.contains("moon-dropdown")) {
                 moonDropdown.classList.add("hidden")
                 return
