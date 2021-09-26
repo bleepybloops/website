@@ -295,6 +295,7 @@
     </section> -->
 
     <script>
+        console.log("starting js")
         canvas = document.getElementById("bg")
         ctx = canvas.getContext("2d")
 
@@ -303,6 +304,7 @@
         canvas.width = window.innerWidth
         canvas.height = window.innerHeight
 
+        console.log("making initial particles")
         for (var i = 0; i < 100; i++) {
             x = Math.random() * canvas.width
             y = Math.random() * canvas.height
@@ -320,25 +322,26 @@
             })
         }
 
+        console.log("updating the particles")
         setInterval(function () {
             ctx.clearRect(0, 0, canvas.width, canvas.height)
 
             for (p in particles) {
                 console.log(p)
-                p.alpha -= 0.01
-                p.x += p.dx
-                p.y += p.dy
+                particles[p].alpha -= 0.01
+                particles[p].x += particles[p].dx
+                particles[p].y += particles[p].dy
                 ctx.beginPath()
-                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2, false)
-                ctx.fillStyle = "rgba(255, 255, 255, " + p.alpha + ")"
+                ctx.arc(particles[p].x, particles[p].y, particles[p].radius, 0, Math.PI * 2, false)
+                ctx.fillStyle = "rgba(255, 255, 255, " + particles[p].alpha + ")"
                 ctx.fill()
-                if (p.alpha <= 0) {
-                    p.alpha = 0.5
-                    p.x = Math.random() * canvas.width
-                    p.y = Math.random() * canvas.height
-                    p.dx = Math.random() * 2 - 1
-                    p.dy = Math.random() * 2 - 1
-                    p.radius = Math.random() * 2.5
+                if (particles[p].alpha <= 0) {
+                    particles[p].alpha = 0.5
+                    particles[p].x = Math.random() * canvas.width
+                    particles[p].y = Math.random() * canvas.height
+                    particles[p].dx = Math.random() * 2 - 1
+                    particles[p].dy = Math.random() * 2 - 1
+                    particles[p].radius = Math.random() * 2.5
                 }
             }
 
