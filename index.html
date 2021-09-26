@@ -310,7 +310,7 @@
                 radius: Math.random() * 2.5,
                 alpha: Math.random() * 0.5,
                 dx: 0, //Math.random() - 0.5,
-                dy: Math.random(), //Math.random() - 0.5,
+                dy: Math.random() * 1.5, //Math.random() - 0.5,
             }
         }
 
@@ -325,6 +325,9 @@
                 particles[p].alpha -= 0.001
                 if (particles[p].alpha <= 0) {
                     particles[p] = initParticle()
+                }
+                if (particles[p].y > canvas.height) {
+                    particles[p].y = 0
                 }
                 particles[p].x += particles[p].dx
                 particles[p].y += particles[p].dy
