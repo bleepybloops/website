@@ -295,7 +295,6 @@
     </section> -->
 
     <script>
-        console.log("starting js")
         canvas = document.getElementById("bg")
         ctx = canvas.getContext("2d")
 
@@ -304,46 +303,37 @@
         canvas.width = window.innerWidth
         canvas.height = window.innerHeight
 
-        console.log("making initial particles")
-        for (var i = 0; i < 100; i++) {
-            x = Math.random() * canvas.width
-            y = Math.random() * canvas.height
-            radius = Math.random() * 2.5
-            alpha = Math.random() * 0.5
-            dx = Math.random() - 0.5
-            dy = Math.random() - 0.5
-            particles.push({
-                x: x,
-                y: y,
-                dx: dx,
-                dy: dy,
-                radius: radius,
-                alpha: alpha
-            })
+        initParticle = () => {
+            return {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 2.5,
+                alpha: Math.random() * 0.5,
+                dx: Math.random() - 0.5,
+                dy: Math.random() - 0.5,
+            }
         }
 
-        console.log("updating the particles")
+        for (var i = 0; i < 1000; i++) {
+            particles.push(initParticle())
+        }
+
         setInterval(function () {
             ctx.clearRect(0, 0, canvas.width, canvas.height)
 
             for (p in particles) {
                 particles[p].alpha -= 0.01
+                if (particles[p].alpha <= 0) {
+                    particles[p] = initParticle()
+                }
                 particles[p].x += particles[p].dx
                 particles[p].y += particles[p].dy
+
                 ctx.beginPath()
                 ctx.arc(particles[p].x, particles[p].y, particles[p].radius, 0, Math.PI * 2, false)
                 ctx.fillStyle = "rgba(255, 255, 255, " + particles[p].alpha + ")"
                 ctx.fill()
-                if (particles[p].alpha <= 0) {
-                    particles[p].alpha = 0.5
-                    particles[p].x = Math.random() * canvas.width
-                    particles[p].y = Math.random() * canvas.height
-                    particles[p].dx = Math.random() - 0.5
-                    particles[p].dy = Math.random() - 0.5
-                    particles[p].radius = Math.random() * 2.5
-                }
             }
-
         }, 1000 / 60)
     </script>
 
