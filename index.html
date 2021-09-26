@@ -491,7 +491,7 @@
                 moonDropdown.classList.toggle('hidden')
                 return
             }
-            if (!isDescendant(moonDropdown, e.target) && !e.target.classList.contains("moon") && !e.target.classList.contains("moon-dropdown")) {
+            if (!isDescendant(moonDropdown, e.target) && !e.target.classList.contains("moon")) {
                 console.log("not dropdown, a descendant or moon, should hide")
                 moonDropdown.classList.add("hidden")
                 return
