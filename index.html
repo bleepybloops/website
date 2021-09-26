@@ -309,14 +309,13 @@
             y = Math.random() * canvas.height
             radius = Math.random() * 2.5
             alpha = Math.random() * 0.4
-            ctx.beginPath()
-            ctx.arc(x, y, radius, 0, Math.PI * 2, false)
-            ctx.fillStyle = "rgba(255, 255, 255, " + alpha + ")"
-            ctx.fill()
-
+            dx = Math.random() * 2 - 1
+            dy = Math.random() * 2 - 1
             particles.push({
                 x: x,
                 y: y,
+                dx: dx,
+                dy: dy,
                 radius: radius,
                 alpha: alpha
             })
@@ -324,13 +323,23 @@
 
         setInterval(function () {
             ctx.clearRect(0, 0, canvas.width, canvas.height)
+
             for (particles in particles) {
                 particles[particles].alpha -= 0.01
+                particles[particles].x += particles[particles].dx
+                particles[particles].y += particles[particles].dy
                 ctx.beginPath()
                 ctx.arc(particles[particles].x, particles[particles].y, particles[particles].radius, 0, Math.PI * 2, false)
                 ctx.fillStyle = "rgba(255, 255, 255, " + particles[particles].alpha + ")"
                 ctx.fill()
+                if (particles[particles].alpha <= 0) {
+                    particles[particles].x = Math.random() * canvas.width
+                    particles[particles].y = Math.random() * canvas.height
+                    particles[particles].alpha = Math.random() * 0.4
+                    particles[particles].radius = Math.random() * 2.5
+                }
             }
+
         }, 1000 / 60)
     </script>
 
