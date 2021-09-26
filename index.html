@@ -472,6 +472,24 @@
                 ctx.fill()
             }
         }, 1000 / 60)
+
+        isDescendant = (parent, child) => {
+            node = child.parentNode
+            while (node != null) {
+                if (node == parent) return true
+                node = node.parentNode
+            }
+            return false
+        }
+        document.addEventListener("click", function (e) {
+            moonDropdown = document.querySelector(".moon-dropdown")
+            // ignore clicks on children
+            if (isDescendant(moonDropdown, e.target)) return
+            // ignore clicks on self
+            if (e.target.classList.contains("moon-dropdown")) return
+            // otherwise, hide it
+            moonDropdown.classList.add("hidden")
+        })
     </script>
 
 </body>
