@@ -311,7 +311,7 @@
             radius = Math.random() * 2.5
             alpha = Math.random() * 0.5
             dx = Math.random() * 2 - 1
-            dy = Math.random() * 2 - 1
+            dy = Math.random() * 2
             particles.push({
                 x: x,
                 y: y,
@@ -327,7 +327,6 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height)
 
             for (p in particles) {
-                console.log(p)
                 particles[p].alpha -= 0.01
                 particles[p].x += particles[p].dx
                 particles[p].y += particles[p].dy
