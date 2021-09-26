@@ -158,6 +158,25 @@
             width: 100%;
         }
 
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            /* z-index: -1; */
+        }
+
+        input[type=text] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            resize: vertical;
+        }
+
         @media screen and (max-width: 1500px) {
             section {
                 width: 80%;
@@ -213,15 +232,6 @@
 
         ::-webkit-scrollbar-corner {
             background: rgba(0, 0, 0, 0);
-        }
-
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            /* z-index: -1; */
         }
     </style>
 </head>
