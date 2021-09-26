@@ -302,6 +302,16 @@
 
         ctx.fillStyle = "red"
         ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+        for (var i = 0; i < 100; i++) {
+            x = Math.random() * canvas.width
+            y = Math.random() * canvas.height
+            radius = Math.random() * 10
+            ctx.beginPath()
+            ctx.arc(x, y, radius, 0, Math.PI * 2, false)
+            ctx.fillStyle = "rgba(255, 255, 255, 0.1)"
+            ctx.fill()
+        }
     </script>
 
 </body>
