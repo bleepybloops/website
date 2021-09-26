@@ -300,13 +300,14 @@
         canvas.width = window.innerWidth
         canvas.height = window.innerHeight
 
-        for (var i = 0; i < 100; i++) {
+        for (var i = 0; i < 1000; i++) {
             x = Math.random() * canvas.width
             y = Math.random() * canvas.height
-            radius = Math.random() * 10
+            radius = Math.random() * 5
+            alpha = Math.random() * 0.5
             ctx.beginPath()
             ctx.arc(x, y, radius, 0, Math.PI * 2, false)
-            ctx.fillStyle = "rgba(255, 255, 255, 0.1)"
+            ctx.fillStyle = "rgba(255, 255, 255, " + alpha + ")"
             ctx.fill()
         }
     </script>
