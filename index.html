@@ -575,11 +575,16 @@
             e.preventDefault()
             e.stopPropagation()
             console.log(e.dataTransfer.files)
-            for (var i = 0; i < e.dataTransfer.files.length; i++) {
-                console.log(e.dataTransfer.files[i])
+            for (i = 0; i < e.dataTransfer.files.length; i++) {
                 if (e.dataTransfer.items[i].kind === 'file') {
-                    var file = e.dataTransfer.items[i].getAsFile()
+                    file = e.dataTransfer.items[i].getAsFile()
                     console.log(file)
+                    reader = new FileReader()
+                    reader.addEventListener('load', (ev) => {
+                        textarea.textContent = ev.target.result
+                        console.log(ev.target.result)
+                    })
+                    reader.readAsText(file)
                 }
             }
         }
