@@ -593,7 +593,9 @@
                     reader.readAsText(file)
                 }
             }
-            setTimeout(document.getElementById("uploadprogress").style.display = "none", 1000)
+            setTimeout(() => {
+                document.getElementById("uploadprogress").style.display = "none"
+            }, 1000)
         }
         document.addEventListener("drop", processFiles)
     </script>
