@@ -598,6 +598,9 @@
                     reader = new FileReader()
                     reader.onload = (e) => {
                         if(file.type.match("image.*")) {
+                            text = document.createElement("p")
+                            text.innerText = file.URL
+                            document.getElementById("uploads").appendChild(text)
                             img = new Image()
                             img.src = window.URL.createObjectURL(file)
                             img.onload = function () {
@@ -605,6 +608,9 @@
                             }
                             document.getElementById("uploads").appendChild(img)
                         } else if(file.type.match("audio.*")) {
+                            text = document.createElement("p")
+                            text.innerText = file.URL
+                            document.getElementById("uploads").appendChild(text)
                             aud = document.createElement("audio")
                             aud.src = window.URL.createObjectURL(file)
                             aud.controls = "controls"
@@ -613,6 +619,9 @@
                             }
                             document.getElementById("uploads").appendChild(aud)
                         } else if(file.type.match("video.*")) {
+                            text = document.createElement("p")
+                            text.innerText = file.URL
+                            document.getElementById("uploads").appendChild(text)
                             video = document.createElement("video")
                             video.src = window.URL.createObjectURL(file)
                             video.controls = true
