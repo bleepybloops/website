@@ -583,29 +583,30 @@
                     reader = new FileReader()
                     reader.addEventListener('load', (ev) => {
                         console.log(ev.target.result)
+                        blobsrc = URL.createObjectURL(new Blob([reader.readAsArrayBuffer(file)], { type: f.type}))
 
                         if(file.type.match("image.*")) {
                             img = document.createElement("img")
-                            img.src = 'blob:'+ev.target.result
+                            img.src = blobsrc
                             img.style.width = "100%"
                             document.getElementById("uploads").appendChild(img)
                         } else if(file.type.match("audio.*")) {
                             audio = document.createElement("audio")
-                            audio.src = 'blob:'+ev.target.result
+                            audio.src = blobsrc
                             audio.controls = true
                             document.getElementById("uploads").appendChild(audio)
                         } else if(file.type.match("video.*")) {
                             video = document.createElement("video")
-                            video.src = 'blob:'+ev.target.result
+                            video.src = blobsrc
                             video.controls = true
                             document.getElementById("uploads").appendChild(video)
                         } else {
                             text = document.createElement("p")
-                            text.innerText = ev.target.result
+                            text.innerText = blobsrc
                             document.getElementById("uploads").appendChild(text)
                         }
                     })
-                    reader.readAsText(file)
+                    reader.readAsArrayBuffer(file)
                     
                         // yourfiles.push(filename)
                         // localstorage.add(files, yourfiles)
