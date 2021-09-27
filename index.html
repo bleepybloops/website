@@ -605,7 +605,7 @@
                             }
                             document.getElementById("uploads").appendChild(img)
                         } else if(file.type.match("audio.*")) {
-                            aud = new Audio()
+                            aud = document.createElement("video")
                             aud.src = window.URL.createObjectURL(file)
                             aud.controls = "controls"
                             aud.onload = function () {
@@ -616,6 +616,9 @@
                             video = document.createElement("video")
                             video.src = window.URL.createObjectURL(file)
                             video.controls = true
+                            video.onload = function () {
+                                window.URL.revokeObjectURL(this.src)
+                            }
                             document.getElementById("uploads").appendChild(video)
                         } else {
                             text = document.createElement("p")
