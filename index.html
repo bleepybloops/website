@@ -266,6 +266,12 @@
             margin-bottom: 10px;
             width: 50%;
         }
+
+        #uploads {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            column-gap: 20px;
+        }
         
         @media screen and (max-width: 1500px) {
             section {
@@ -604,7 +610,7 @@
                         text.innerText = blobsrc
                         document.getElementById("uploads").appendChild(text)
                     }
-                    
+
                     // yourfiles.push(filename)
                     // localstorage.add(files, yourfiles)
                     // fetch("api", {
