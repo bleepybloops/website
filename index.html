@@ -479,7 +479,10 @@
     </section> -->
 
     <section>
-        <h3>drop a file anywhere on this page to upload.</h3>
+        <h3>drop a file anywhere on this page to upload</h3>
+        <label for="uploader">or click here to select files</label>
+        <input type="file" name="uploader" id="uploader" multiple>
+
 
         <progress id="uploadprogress" value="32" max="100"></progress>
 
@@ -487,8 +490,6 @@
 
         <div id="uploads"></div>
 
-        <label for="uploader">or click here to select files</label>
-        <input type="file" name="uploader" id="uploader" multiple>
 
     </section>
     <!-- 
