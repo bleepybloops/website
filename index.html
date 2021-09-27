@@ -571,8 +571,8 @@
             console.log(e.dataTransfer.files)
             for (var i = 0; i < e.dataTransfer.files.length; i++) {
                 console.log(e.dataTransfer.files[i])
-                if (ev.dataTransfer.items[i].kind === 'file') {
-                    var file = ev.dataTransfer.items[i].getAsFile()
+                if (e.dataTransfer.items[i].kind === 'file') {
+                    var file = e.dataTransfer.items[i].getAsFile()
                     console.log(file)
                 }
             }
