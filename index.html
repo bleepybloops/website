@@ -559,6 +559,23 @@
             }
         }
         document.addEventListener("click", toggler)
+
+        document.addEventListener("dragover", (e) => {
+            e.preventDefault()
+            document.body.style.filter = "brightness(120%)"
+        })
+        document.addEventListener("drop", (e) => {
+            e.preventDefault()
+            e.stopPropagation()
+            console.log(e.dataTransfer.files)
+            for (var i = 0; i < e.dataTransfer.files.length; i++) {
+                console.log(e.dataTransfer.files[i])
+                if (ev.dataTransfer.items[i].kind === 'file') {
+                    var file = ev.dataTransfer.items[i].getAsFile()
+                    console.log(file)
+                }
+            }
+        })
     </script>
 
 </body>
