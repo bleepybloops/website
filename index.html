@@ -577,6 +577,7 @@
             document.getElementById("uploads").scrollTop = 0
         })
         processFiles = (e) => {
+            document.getElementById("uploadprogress") = 0
             e.preventDefault()
             e.stopPropagation()
             document.getElementById("uploadprogress").style.display = "block"
@@ -612,6 +613,7 @@
                     // }
                 }
             }
+            document.getElementById("uploadprogress") = 100
         }
         document.addEventListener("drop", processFiles)
         document.addEventListener("load", () => {
