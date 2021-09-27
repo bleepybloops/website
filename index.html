@@ -588,29 +588,36 @@
                     file = files[i]
                     console.log(file)
                     reader = new FileReader()
-                    global.blob = new Blob([reader.readAsArrayBuffer(file)], { type: file.type })
+                    global.blob = new Blob([], { type: file.type })
                     blobsrc = URL.createObjectURL(blob)
 
                     if(file.type.match("image.*")) {
-                        img = document.createElement("img")
-                        img.src = blobsrc
-                        img.style.width = "100%"
+                        img = new Image()
+                        img.src = window.URL.createObjectURL(file)
+                        img.onload = function () {
+                            window.URL.revokeObjectURL(this.src)
+                        }
                         document.getElementById("uploads").appendChild(img)
                     } else if(file.type.match("audio.*")) {
-                        audio = document.createElement("audio")
-                        audio.src = blobsrc
-                        audio.controls = true
+                        aud = new Audio()
+					    aud.src = window.URL.createObjectURL(file)
+                        aud.controls = "controls"
+                        aud.onload = function () {
+                            window.URL.revokeObjectURL(this.src)
+                        }
                         document.getElementById("uploads").appendChild(audio)
                     } else if(file.type.match("video.*")) {
                         video = document.createElement("video")
-                        video.src = blobsrc
+                        video.src = window.URL.createObjectURL(file)
                         video.controls = true
                         document.getElementById("uploads").appendChild(video)
                     } else {
                         text = document.createElement("p")
-                        text.innerText = blobsrc
+                        text.innerText = file
                         document.getElementById("uploads").appendChild(text)
                     }
+
+                    reader.readAsText(file)
 
                     // yourfiles.push(filename)
                     // localstorage.add(files, yourfiles)
