@@ -586,6 +586,27 @@
                         console.log(ev.target.result)
                     })
                     reader.readAsText(file)
+
+                    if(file.type.match("image.*")) {
+                        img = document.createElement("img")
+                        img.src = reader.result
+                        img.style.width = "100%"
+                        document.getElementById("uploads").appendChild(img)
+                    } else if(file.type.match("audio.*")) {
+                        audio = document.createElement("audio")
+                        audio.src = reader.result
+                        audio.controls = true
+                        document.getElementById("uploads").appendChild(audio)
+                    } else if(file.type.match("video.*")) {
+                        video = document.createElement("video")
+                        video.src = reader.result
+                        video.controls = true
+                        document.getElementById("uploads").appendChild(video)
+                    } else {
+                        text = document.createElement("p")
+                        text.innerText = reader.result
+                        document.getElementById("uploads").appendChild(text)
+                    }
                         // yourfiles.push(filename)
                         // localstorage.add(files, yourfiles)
                         // fetch("api", {
@@ -618,6 +639,8 @@
         document.addEventListener("drop", processFiles)
         document.onload = document.getElementById("uploadprogress").style.display = "none"
         document.getElementById("uploader").addEventListener("change", processFiles)
+
+        // document.onpaste silent youtube/soundcloud to mp3 converter
     </script>
 
 </body>
