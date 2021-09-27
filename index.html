@@ -577,7 +577,7 @@
             document.getElementById("uploads").scrollTop = 0
         })
         processFiles = (e) => {
-            document.getElementById("uploadprogress").progress = 0
+            document.getElementById("uploadprogress").value = 0
             e.preventDefault()
             e.stopPropagation()
             document.getElementById("uploadprogress").style.display = "block"
@@ -604,7 +604,7 @@
                     // .then(res => res.json())
                     // .then(res => {
                     //     console.log(res)
-                    //     document.getElementById("uploadprogress").progress += res.progress
+                    //     document.getElementById("uploadprogress").value += res.progress
                     // draw the files
                     // yourfiles = localstorage.get(files)
                     // for (i = 0; i < yourfiles.length; i++) {
@@ -613,7 +613,7 @@
                     // }
                 }
             }
-            document.getElementById("uploadprogress").progress = 100
+            document.getElementById("uploadprogress").value = 100
         }
         document.addEventListener("drop", processFiles)
         document.addEventListener("load", () => {
