@@ -563,7 +563,7 @@
 
         document.addEventListener("dragover", (e) => {
             e.preventDefault()
-            document.body.style.filter = "brightness(120%)"
+            document.getElementById("uploader").scrollTop = 0
         })
         processFiles = (e) => {
             e.preventDefault()
