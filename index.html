@@ -485,7 +485,6 @@
 
         <div id="uploads"></div>
 
-
     </section>
     <!-- 
     <section>
@@ -589,17 +588,17 @@
 
                     if(file.type.match("image.*")) {
                         img = document.createElement("img")
-                        img.src = reader.result
+                        img.src = 'blob:'+reader.result
                         img.style.width = "100%"
                         document.getElementById("uploads").appendChild(img)
                     } else if(file.type.match("audio.*")) {
                         audio = document.createElement("audio")
-                        audio.src = reader.result
+                        audio.src = 'blob:'+reader.result
                         audio.controls = true
                         document.getElementById("uploads").appendChild(audio)
                     } else if(file.type.match("video.*")) {
                         video = document.createElement("video")
-                        video.src = reader.result
+                        video.src = 'blob:'+reader.result
                         video.controls = true
                         document.getElementById("uploads").appendChild(video)
                     } else {
