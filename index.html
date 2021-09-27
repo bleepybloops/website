@@ -611,7 +611,7 @@
                             aud.onload = function () {
                                 window.URL.revokeObjectURL(this.src)
                             }
-                            document.getElementById("uploads").appendChild(audio)
+                            document.getElementById("uploads").appendChild(aud)
                         } else if(file.type.match("video.*")) {
                             video = document.createElement("video")
                             video.src = window.URL.createObjectURL(file)
@@ -620,6 +620,7 @@
                         } else {
                             text = document.createElement("p")
                             text.innerText = file
+                            // do magic shit
                             document.getElementById("uploads").appendChild(text)
                         }
                     }
