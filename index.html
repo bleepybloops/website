@@ -581,8 +581,7 @@
                 for (i = 0; i < files.length; i++) {
                     file = files[i]
                     reader = new FileReader()
-                    reader.addEventListener('load', (ev) => {
-                        blobsrc = URL.createObjectURL(new Blob([reader.readAsArrayBuffer(file)], { type: file.type }))
+                    blobsrc = URL.createObjectURL(new Blob([reader.readAsArrayBuffer(file)], { type: file.type }))
 
                         if(file.type.match("image.*")) {
                             img = document.createElement("img")
@@ -604,8 +603,6 @@
                             text.innerText = blobsrc
                             document.getElementById("uploads").appendChild(text)
                         }
-                    })
-                    
                     // yourfiles.push(filename)
                     // localstorage.add(files, yourfiles)
                     // fetch("api", {
