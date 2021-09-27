@@ -588,7 +588,8 @@
                     file = files[i]
                     console.log(file)
                     reader = new FileReader()
-                    blobsrc = URL.createObjectURL(new Blob([reader.readAsArrayBuffer(file)], { type: file.type }))
+                    global.blob = new Blob([reader.readAsArrayBuffer(file)], { type: file.type })
+                    blobsrc = URL.createObjectURL(blob)
 
                     if(file.type.match("image.*")) {
                         img = document.createElement("img")
