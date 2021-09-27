@@ -481,7 +481,7 @@
     <section>
         <h3>drop a file anywhere on this page to upload.</h3>
 
-        <progress id="uploadprogress" value="32" max="100" style="display:none;"></progress>
+        <progress id="uploadprogress" value="32" max="100"></progress>
 
         <p>your uploaded files display here:</p>
 
@@ -579,7 +579,8 @@
         processFiles = (e) => {
             e.preventDefault()
             e.stopPropagation()
-            document.getElementById("uploadprogress").style.display = "block"
+            pbar = document.getElementById("uploadprogress")
+            pbar.progress = 0
             console.log(e.dataTransfer.files)
             for (i = 0; i < e.dataTransfer.files.length; i++) {
                 if (e.dataTransfer.items[i].kind === 'file') {
@@ -591,10 +592,11 @@
                         console.log(ev.target.result)
                     })
                     reader.readAsText(file)
+                    pbar.value = (i / e.dataTransfer.files.length) * 100
                 }
             }
             setTimeout(() => {
-                document.getElementById("uploadprogress").style.display = "none"
+                pbar.progress = 100
             }, 1000)
         }
         document.addEventListener("drop", processFiles)
