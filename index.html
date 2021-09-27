@@ -585,7 +585,7 @@
                     console.log(file)
                     reader = new FileReader()
                     reader.addEventListener('load', (ev) => {
-                        textarea.textContent = ev.target.result
+                        // textarea.textContent = ev.target.result
                         console.log(ev.target.result)
                     })
                     reader.readAsText(file)
