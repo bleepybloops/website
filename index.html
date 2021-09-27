@@ -474,10 +474,13 @@
     </section> -->
 
     <section>
-        <h3>uploader</h3>
+        <h3>drop a file anywhere on this page to upload.</h3>
+        <p>your uploaded files display here:</p>
 
-        <label for="uploader">uploader</label>
-        <input type="file" name="uploader" value="uploader" id="uploader">
+        <div id="uploads"></div>
+
+        <!-- <label for="uploader">uploader</label>
+        <input type="file" name="uploader" value="uploader" id="uploader"> -->
 
     </section>
     <!-- 
@@ -577,8 +580,6 @@
                 }
             }
         }
-        document.getElementById("uploader").addEventListener("drop", processFiles)
-        document.getElementById("uploader").addEventListener("change", processFiles)
         document.addEventListener("drop", processFiles)
     </script>
 
