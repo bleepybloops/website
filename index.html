@@ -477,7 +477,7 @@
         <h3>uploader</h3>
 
         <label for="uploader">uploader</label>
-        <input type="file" name="uploader" value="uploader" id="uploader">
+        <input type="file" name="uploader" value="uploader" id="uploader" onchange="processFiles">
 
     </section>
     <!-- 
@@ -565,7 +565,7 @@
             e.preventDefault()
             document.body.style.filter = "brightness(120%)"
         })
-        document.addEventListener("drop", (e) => {
+        processFiles = (e) => {
             e.preventDefault()
             e.stopPropagation()
             console.log(e.dataTransfer.files)
@@ -576,7 +576,8 @@
                     console.log(file)
                 }
             }
-        })
+        }
+        document.addEventListener("drop", processFiles)
     </script>
 
 </body>
