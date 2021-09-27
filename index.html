@@ -582,7 +582,6 @@
                     file = files[i]
                     reader = new FileReader()
                     reader.addEventListener('load', (ev) => {
-                        console.log(ev.target.result)
                         blobsrc = URL.createObjectURL(new Blob([reader.readAsArrayBuffer(file)], { type: file.type }))
 
                         if(file.type.match("image.*")) {
@@ -606,27 +605,26 @@
                             document.getElementById("uploads").appendChild(text)
                         }
                     })
-                    reader.readAsArrayBuffer(file)
                     
-                        // yourfiles.push(filename)
-                        // localstorage.add(files, yourfiles)
-                        // fetch("api", {
-                        //     method: "POST",
-                        //     body: file,
-                        //     headers: {
-                        //         "Content-Type": "application/octet-stream"
-                        //     }
-                        // })
-                        // .then(res => res.json())
-                        // .then(res => {
-                        //     console.log(res)
-                        //     document.getElementById("uploadprogress").value += res.progress
-                        // draw the files
-                        // yourfiles = localstorage.get(files)
-                        // for (i = 0; i < yourfiles.length; i++) {
-                        // draw each
-                        // }
-                        // }
+                    // yourfiles.push(filename)
+                    // localstorage.add(files, yourfiles)
+                    // fetch("api", {
+                    //     method: "POST",
+                    //     body: file,
+                    //     headers: {
+                    //         "Content-Type": "application/octet-stream"
+                    //     }
+                    // })
+                    // .then(res => res.json())
+                    // .then(res => {
+                    //     console.log(res)
+                    //     document.getElementById("uploadprogress").value += res.progress
+                    // draw the files
+                    // yourfiles = localstorage.get(files)
+                    // for (i = 0; i < yourfiles.length; i++) {
+                    // draw each
+                    // }
+                    // }
                 }
             // document.getElementById("uploadprogress").value = 100
             progressor = setInterval(() => {
