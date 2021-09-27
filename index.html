@@ -614,9 +614,17 @@
                 }
             }
             document.getElementById("uploadprogress").value = 100
+            progressor = setInterval(() => {
+                document.getElementById("uploadprogress").value++
+            }, 10)
+            setTimeout(() => {
+                document.getElementById("uploadprogress").style.display = "none"
+                clearInterval(progressor)
+            }, 1000)
         }
         document.addEventListener("drop", processFiles)
         document.addEventListener("load", () => {
+            document.getElementById("uploadprogress").style.display = "none"
             // if localstorage.get(files) exists
             // yourfiles = localstorage.get(files)
             // for (i = 0; i < yourfiles.length; i++) {
