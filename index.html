@@ -579,8 +579,7 @@
         processFiles = (e) => {
             e.preventDefault()
             e.stopPropagation()
-            pbar = document.getElementById("uploadprogress")
-            pbar.progress = 0
+            document.getElementById("uploadprogress").style.display = "block"
             console.log(e.dataTransfer.files)
             for (i = 0; i < e.dataTransfer.files.length; i++) {
                 if (e.dataTransfer.items[i].kind === 'file') {
@@ -592,14 +591,36 @@
                         console.log(ev.target.result)
                     })
                     reader.readAsText(file)
-                    pbar.value = (i / e.dataTransfer.files.length) * 100
+                    // yourfiles.push(filename)
+                    // localstorage.add(files, yourfiles)
+                    // fetch("api", {
+                    //     method: "POST",
+                    //     body: file,
+                    //     headers: {
+                    //         "Content-Type": "application/octet-stream"
+                    //     }
+                    // })
+                    // .then(res => res.json())
+                    // .then(res => {
+                    //     console.log(res)
+                    //     document.getElementById("uploadprogress").progress += res.progress
+                    // draw the files
+                    // yourfiles = localstorage.get(files)
+                    // for (i = 0; i < yourfiles.length; i++) {
+                    // draw each
+                    // }
+                    // }
                 }
             }
-            setTimeout(() => {
-                pbar.progress = 100
-            }, 1000)
         }
         document.addEventListener("drop", processFiles)
+        document.addEventListener(load, () => {
+            // if localstorage.get(files) exists
+            // yourfiles = localstorage.get(files)
+            // for (i = 0; i < yourfiles.length; i++) {
+            // draw each
+            // }
+        })
     </script>
 
 </body>
