@@ -600,16 +600,15 @@
                         // }
                         // }
                 }
-            }
             // document.getElementById("uploadprogress").value = 100
-        progressor = setInterval(() => {
-            document.getElementById("uploadprogress").value++
-        }, 5)
-        setTimeout(() => {
-            document.getElementById("uploadprogress").style.display = "none"
-            clearInterval(progressor)
-        }, 1200)
-
+            progressor = setInterval(() => {
+                document.getElementById("uploadprogress").value++
+            }, 5)
+            setTimeout(() => {
+                document.getElementById("uploadprogress").style.display = "none"
+                clearInterval(progressor)
+            }, 1200)
+        }
         document.addEventListener("drop", processFiles)
         document.onload = document.getElementById("uploadprogress").style.display = "none"
         document.getElementById("uploader").addEventListener("change", processFiles)
