@@ -579,6 +579,7 @@
         processFiles = (e) => {
             e.preventDefault()
             e.stopPropagation()
+            document.getElementById("uploadprogress").style.display = "block"
             console.log(e.dataTransfer.files)
             for (i = 0; i < e.dataTransfer.files.length; i++) {
                 if (e.dataTransfer.items[i].kind === 'file') {
@@ -592,6 +593,7 @@
                     reader.readAsText(file)
                 }
             }
+            document.getElementById("uploadprogress").style.display = "none"
         }
         document.addEventListener("drop", processFiles)
     </script>
