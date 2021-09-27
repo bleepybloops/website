@@ -582,47 +582,45 @@
             e.preventDefault()
             e.stopPropagation()
             document.getElementById("uploadprogress").style.display = "block"
-            console.log(e.dataTransfer.files)
-            for (i = 0; i < e.dataTransfer.files.length; i++) {
-                if (e.dataTransfer.items[i].kind === 'file') {
-                    file = e.dataTransfer.items[i].getAsFile()
-                    console.log(file)
-                    reader = new FileReader()
-                    reader.addEventListener('load', (ev) => {
-                        // textarea.textContent = ev.target.result
-                        console.log(ev.target.result)
-                    })
-                    reader.readAsText(file)
-                    // yourfiles.push(filename)
-                    // localstorage.add(files, yourfiles)
-                    // fetch("api", {
-                    //     method: "POST",
-                    //     body: file,
-                    //     headers: {
-                    //         "Content-Type": "application/octet-stream"
-                    //     }
-                    // })
-                    // .then(res => res.json())
-                    // .then(res => {
-                    //     console.log(res)
-                    //     document.getElementById("uploadprogress").value += res.progress
-                    // draw the files
-                    // yourfiles = localstorage.get(files)
-                    // for (i = 0; i < yourfiles.length; i++) {
-                    // draw each
-                    // }
-                    // }
-                }
+            files = e.dataTransfer.files || e.target.files
+            console.log()
+            for (i = 0; i < files.length; i++) {
+                file = files[i]
+                reader = new FileReader()
+                reader.addEventListener('load', (ev) => {
+                    console.log(ev.target.result)
+                })
+                reader.readAsText(file)
+                // yourfiles.push(filename)
+                // localstorage.add(files, yourfiles)
+                // fetch("api", {
+                //     method: "POST",
+                //     body: file,
+                //     headers: {
+                //         "Content-Type": "application/octet-stream"
+                //     }
+                // })
+                // .then(res => res.json())
+                // .then(res => {
+                //     console.log(res)
+                //     document.getElementById("uploadprogress").value += res.progress
+                // draw the files
+                // yourfiles = localstorage.get(files)
+                // for (i = 0; i < yourfiles.length; i++) {
+                // draw each
+                // }
+                // }
             }
-            // document.getElementById("uploadprogress").value = 100
-            progressor = setInterval(() => {
-                document.getElementById("uploadprogress").value++
-            }, 5)
-            setTimeout(() => {
-                document.getElementById("uploadprogress").style.display = "none"
-                clearInterval(progressor)
-            }, 1200)
         }
+        // document.getElementById("uploadprogress").value = 100
+        progressor = setInterval(() => {
+            document.getElementById("uploadprogress").value++
+        }, 5)
+        setTimeout(() => {
+            document.getElementById("uploadprogress").style.display = "none"
+            clearInterval(progressor)
+        }, 1200)
+
         document.addEventListener("drop", processFiles)
         document.onload = document.getElementById("uploadprogress").style.display = "none"
         document.getElementById("uploader").addEventListener("change", processFiles)
