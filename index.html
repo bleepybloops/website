@@ -260,6 +260,12 @@
         label[for="uploader"]:hover {
             background: #282341;
         }
+
+        progress {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 50%;
+        }
         
         @media screen and (max-width: 1500px) {
             section {
@@ -348,12 +354,6 @@
         
          ::-webkit-scrollbar-corner {
             background: rgba(0, 0, 0, 0);
-        }
-        
-        progress {
-            margin-top: 10px;
-            margin-bottom: 25px;
-            width: 50%;
         }
         /* audio::-webkit-media-controls-current-time-display,
         audio::-webkit-media-controls-time-remaining-display {
@@ -475,7 +475,7 @@
     </section> -->
 
     <section>
-        <h3>drop a file anywhere on this page to upload</h3>
+        <h3>drop a file anywhere on this page</h3>
         <label for="uploader">...or click here to select files</label>
         <input type="file" name="uploader" id="uploader" multiple>
 
