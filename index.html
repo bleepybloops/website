@@ -616,11 +616,11 @@
             // document.getElementById("uploadprogress").value = 100
             progressor = setInterval(() => {
                 document.getElementById("uploadprogress").value++
-            }, 10)
+            }, 5)
             setTimeout(() => {
                 document.getElementById("uploadprogress").style.display = "none"
                 clearInterval(progressor)
-            }, 1500)
+            }, 1200)
         }
         document.addEventListener("drop", processFiles)
         document.onload = document.getElementById("uploadprogress").style.display = "none"
