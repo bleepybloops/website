@@ -605,7 +605,7 @@
                             }
                             document.getElementById("uploads").appendChild(img)
                         } else if(file.type.match("audio.*")) {
-                            aud = document.createElement("video")
+                            aud = document.createElement("audio")
                             aud.src = window.URL.createObjectURL(file)
                             aud.controls = "controls"
                             aud.onload = function () {
