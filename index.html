@@ -644,6 +644,7 @@
                             img.onload = function () {
                                 window.URL.revokeObjectURL(this.src)
                             }
+                            console.log("got img", img)
                             document.getElementById("uploads").appendChild(img)
                         } else if(file.type.match("audio.*")) {
                             audio = new Audio()
@@ -652,6 +653,7 @@
                             audio.onload = function () {
                                 window.URL.revokeObjectURL(this.src)
                             }
+                            console.log("got audio", audio)
                             document.getElementById("uploads").appendChild(audio)
                         } else if(file.type.match("video.*")) {
                             video = document.createElement("video")
@@ -660,6 +662,7 @@
                             video.onload = function () {
                                 window.URL.revokeObjectURL(this.src)
                             }
+                            console.log("got video", video)
                             document.getElementById("uploads").appendChild(video)
                         } else {
                             text = document.createElement("p")
