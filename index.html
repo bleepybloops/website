@@ -311,10 +311,12 @@
 
         #uploads img,
         #uploads video,
-        #uploads audio,
         #uploads p {
             width: 100%;
             height: auto;
+        }
+        #uploads audio {
+            width: 100%;
         }
         
         @media screen and (max-width: 1500px) {
@@ -650,6 +652,7 @@
                             audio = new Audio()
                             audio.src = window.URL.createObjectURL(file)
                             audio.controls = "controls"
+                            audio.preload = null
                             audio.onload = function () {
                                 window.URL.revokeObjectURL(this.src)
                             }
