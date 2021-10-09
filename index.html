@@ -41,12 +41,10 @@
             width: 100%;
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: center;
             z-index: 1;
             border: 1px solid green;
             margin: 50px 0;
-            width: 60%;
-            margin: 50px auto;
         }
 
         header * {
@@ -55,16 +53,15 @@
 
         header div {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: flex-start;
             flex-direction: column;
-            align-self: center;
         }
         
         header img {
             border-radius: 50%;
             height: auto;
-            width: 15%;
+            width: 12%;
             /* margin-bottom: 25px; */
             margin-right: 100px;
         }
@@ -345,11 +342,6 @@
         
         @media screen and (max-width: 600px) {
             section {
-                width: calc(100% - 30px);
-                margin: 25px auto;
-                padding: 25px 15px;
-            }
-            header {
                 width: calc(100% - 30px);
                 margin: 25px auto;
                 padding: 25px 15px;
