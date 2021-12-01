@@ -687,7 +687,7 @@
             e.preventDefault()
             e.stopPropagation()
             document.getElementById("uploadprogress").style.display = "block"
-            files = (e.dataTransfer ? .files) || e.target ? .files
+            files = (e.dataTransfer?.files) || e.target?.files
             console.log()
             for (i = 0; i < files.length; i++) {
                 file = files[i]
