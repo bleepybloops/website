@@ -45,7 +45,7 @@
             z-index: 1;
             margin: 5vh 0;
         }
-
+        
         header div {
             display: flex;
             align-items: center;
@@ -75,7 +75,7 @@
         }
         
         h1 {
-            text-indent:50px;
+            text-indent: 50px;
             text-align: left;
             align-self: flex-start;
             font-size: 5.5em;
@@ -249,21 +249,21 @@
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
             z-index: 2;
         }
+        
         .moon-dropdown h3 {
             width: 100%;
             text-align: center;
             margin-top: 15px;
         }
-
+        
         .moon-dropdown div.tiles {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             column-gap: 8px;
             row-gap: 8px;
             margin-bottom: 15px;
-             
         }
-
+        
         .moon-dropdown div.tiles div {
             border-radius: 10px;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
@@ -271,17 +271,18 @@
             transition: filter 0.1s;
             overflow: hidden;
         }
+        
         .moon-dropdown div.tiles div:hover {
             filter: brightness(150%) saturate(50%);
         }
-
+        
         .moon-dropdown div.tiles div img {
             width: 100%;
             height: auto;
             border-radius: 10px;
             border: 2px solid #282341;
         }
-
+        
         .moon-dropdown a {
             display: block;
         }
@@ -306,26 +307,27 @@
         label[for="uploader"]:hover {
             background: #282341;
         }
-
+        
         progress {
             margin-top: 10px;
             margin-bottom: 10px;
             width: 50%;
         }
-
+        
         #uploads {
             width: 100%;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             column-gap: 20px;
         }
-
+        
         #uploads img,
         #uploads video,
         #uploads p {
             width: 100%;
             height: auto;
         }
+        
         #uploads audio {
             width: 100%;
             height: 50px;
@@ -447,27 +449,35 @@
 <body>
 
     <canvas id="bg"></canvas>
-    <div class="moon"></div>
+
+    <!-- <div class="moon"></div>
     <div class="moon-dropdown hidden">
-        <!-- <h3>iusgefiysef</h3> -->
-        <!--  -->
-        <div class="tiles">
-            <div><a href="http://tinyurl.com/vqgan-pooling" target="_blank"><img src="https://i.ytimg.com/vi/LM8dil6n5h8/maxresdefault.jpg"></a></div>
-            <div><a href="http://tinyurl.com/vqgan-pooling" target="_blank"><img src="https://i.ytimg.com/vi/LM8dil6n5h8/maxresdefault.jpg"></a></div>
-            <div><a href="http://tinyurl.com/vqgan-pooling" target="_blank"><img src="https://i.ytimg.com/vi/LM8dil6n5h8/maxresdefault.jpg"></a></div>
-            <div><a href="http://tinyurl.com/vqgan-pooling" target="_blank"><img src="https://i.ytimg.com/vi/LM8dil6n5h8/maxresdefault.jpg"></a></div>
+    <div class="tiles">
+        <div>
+            <a href="http://tinyurl.com/vqgan-pooling" target="_blank"><img src="https://i.ytimg.com/vi/LM8dil6n5h8/maxresdefault.jpg"></a>
         </div>
-        <h3>a useless form</h3>
-        <input type="text" id="form" placeholder="form">
-        <input type="text" id="form" placeholder="form">
-        <button>button???</button>
+        <div>
+            <a href="http://tinyurl.com/vqgan-pooling" target="_blank"><img src="https://i.ytimg.com/vi/LM8dil6n5h8/maxresdefault.jpg"></a>
+        </div>
+        <div>
+            <a href="http://tinyurl.com/vqgan-pooling" target="_blank"><img src="https://i.ytimg.com/vi/LM8dil6n5h8/maxresdefault.jpg"></a>
+        </div>
+        <div>
+            <a href="http://tinyurl.com/vqgan-pooling" target="_blank"><img src="https://i.ytimg.com/vi/LM8dil6n5h8/maxresdefault.jpg"></a>
+        </div>
     </div>
+    <h3>a useless form</h3>
+    <input type="text" id="form" placeholder="form">
+    <input type="text" id="form" placeholder="form">
+    <button>button???</button>
+    </div> -->
 
     <header>
         <!-- https://pbs.twimg.com/profile_images/1433199121515515911/dDZD_ckM_400x400.jpg sipthestarlight -->
         <!-- https://pbs.twimg.com/profile_images/1431216769465679878/65MYa5iL_400x400.jpg bleepybloops -->
         <img src="https://pbs.twimg.com/profile_images/1433199121515515911/dDZD_ckM_400x400.jpg" alt="Bleepy Bloops">
-        <div><h1>bleepy bloops</h1>
+        <div>
+            <h1>bleepy bloops</h1>
             <p>
                 <span><img src="https://www.freeiconspng.com/thumbs/twitter-icon/twitter-icon-download-18.png" class="icon">
                     <a href="https://twitter.com/bleepybloops">@bleepybloops</a> &middot; <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" class="icon">
@@ -521,14 +531,10 @@
 
         <h3>a playlist of songs that have inspired my music taste or production</h3>
         <div class="audioplayer" style="display:block;">
-            <iframe width="100%" height="350" scrolling="no" frameborder="no" allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1316168491&color=%239e00ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-            <div
-                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                <a href="https://soundcloud.com/bleepy-bloops" title="bleepy bloops" target="_blank"
-                    style="color: #cccccc; text-decoration: none;">bleepy bloops</a> · <a
-                    href="https://soundcloud.com/bleepy-bloops/sets/inspiration" title="inspiration" target="_blank"
-                    style="color: #cccccc; text-decoration: none;">inspiration</a>
+            <iframe width="100%" height="350" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1316168491&color=%239e00ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                <a href="https://soundcloud.com/bleepy-bloops" title="bleepy bloops" target="_blank" style="color: #cccccc; text-decoration: none;">bleepy bloops</a> · <a href="https://soundcloud.com/bleepy-bloops/sets/inspiration" title="inspiration"
+                    target="_blank" style="color: #cccccc; text-decoration: none;">inspiration</a>
             </div>
         </div>
     </section>
@@ -561,7 +567,7 @@
             for this site]</p>
     </section> -->
 
-    <section>
+    <!-- <section>
         <h3>drop a file anywhere on this page</h3>
         <p>this does not work yet since it is not connected to a backend. we're still developing over here :)</p>
         <label for="uploader">...or click here to select files</label>
@@ -573,7 +579,7 @@
 
         <div id="uploads"></div>
 
-    </section>
+    </section> -->
     <!-- 
     <section>
         <h3>??????</h3>
@@ -582,6 +588,23 @@
         <input type="text" id="form" placeholder="form">
         <input type="text" id="form" placeholder="form">
     </section> -->
+
+    <section>
+        <div class="tiles">
+            <div>
+                <a href="http://tinyurl.com/vqgan-pooling" target="_blank"><img src="https://i.ytimg.com/vi/LM8dil6n5h8/maxresdefault.jpg"></a>
+            </div>
+            <div>
+                <a href="http://tinyurl.com/vqgan-pooling" target="_blank"><img src="https://i.ytimg.com/vi/LM8dil6n5h8/maxresdefault.jpg"></a>
+            </div>
+            <div>
+                <a href="http://tinyurl.com/vqgan-pooling" target="_blank"><img src="https://i.ytimg.com/vi/LM8dil6n5h8/maxresdefault.jpg"></a>
+            </div>
+            <div>
+                <a href="http://tinyurl.com/vqgan-pooling" target="_blank"><img src="https://i.ytimg.com/vi/LM8dil6n5h8/maxresdefault.jpg"></a>
+            </div>
+        </div>
+    </section>
 
     <script>
         canvas = document.getElementById("bg")
@@ -660,77 +683,77 @@
             document.getElementById("uploads").scrollTop = 0
         })
         processFiles = (e) => {
-                document.getElementById("uploadprogress").value = 0
-                e.preventDefault()
-                e.stopPropagation()
-                document.getElementById("uploadprogress").style.display = "block"
-                files = e.dataTransfer?.files || e.target?.files
-                console.log()
-                for (i = 0; i < files.length; i++) {
-                    file = files[i]
-                    console.log(file)
-                    reader = new FileReader()
-                    reader.onload = (e) => {
-                        if(file.type.match("image.*")) {
-                            img = new Image()
-                            img.src = window.URL.createObjectURL(file)
-                            img.onload = function () {
-                                window.URL.revokeObjectURL(this.src)
-                            }
-                            console.log("got img", img)
-                            document.getElementById("uploads").appendChild(img)
-                        } else if(file.type.match("audio.*")) {
-                            audio = new Audio()
-                            audio.src = window.URL.createObjectURL(file)
-                            audio.controls = "controls"
-                            audio.preload = null
-                            audio.onload = function () {
-                                window.URL.revokeObjectURL(this.src)
-                            }
-                            console.log("got audio", audio)
-                            document.getElementById("uploads").appendChild(audio)
-                        } else if(file.type.match("video.*")) {
-                            video = document.createElement("video")
-                            video.src = window.URL.createObjectURL(file)
-                            video.controls = true
-                            video.onload = function () {
-                                window.URL.revokeObjectURL(this.src)
-                            }
-                            console.log("got video", video)
-                            document.getElementById("uploads").appendChild(video)
-                        } else {
-                            text = document.createElement("p")
-                            reader1 = new FileReader()
-                            reader1.onload = (e) => {
-                                text.innerText = e.target.result.substring(0, 100)
-                            }
-                            reader1.readAsText(file)
-                            document.getElementById("uploads").appendChild(text)
+            document.getElementById("uploadprogress").value = 0
+            e.preventDefault()
+            e.stopPropagation()
+            document.getElementById("uploadprogress").style.display = "block"
+            files = (e.dataTransfer ? .files) || e.target ? .files
+            console.log()
+            for (i = 0; i < files.length; i++) {
+                file = files[i]
+                console.log(file)
+                reader = new FileReader()
+                reader.onload = (e) => {
+                    if (file.type.match("image.*")) {
+                        img = new Image()
+                        img.src = window.URL.createObjectURL(file)
+                        img.onload = function() {
+                            window.URL.revokeObjectURL(this.src)
                         }
+                        console.log("got img", img)
+                        document.getElementById("uploads").appendChild(img)
+                    } else if (file.type.match("audio.*")) {
+                        audio = new Audio()
+                        audio.src = window.URL.createObjectURL(file)
+                        audio.controls = "controls"
+                        audio.preload = null
+                        audio.onload = function() {
+                            window.URL.revokeObjectURL(this.src)
+                        }
+                        console.log("got audio", audio)
+                        document.getElementById("uploads").appendChild(audio)
+                    } else if (file.type.match("video.*")) {
+                        video = document.createElement("video")
+                        video.src = window.URL.createObjectURL(file)
+                        video.controls = true
+                        video.onload = function() {
+                            window.URL.revokeObjectURL(this.src)
+                        }
+                        console.log("got video", video)
+                        document.getElementById("uploads").appendChild(video)
+                    } else {
+                        text = document.createElement("p")
+                        reader1 = new FileReader()
+                        reader1.onload = (e) => {
+                            text.innerText = e.target.result.substring(0, 100)
+                        }
+                        reader1.readAsText(file)
+                        document.getElementById("uploads").appendChild(text)
                     }
-
-                    reader.readAsText(file)
-
-                    // yourfiles.push(filename)
-                    // localstorage.add(files, yourfiles)
-                    // fetch("api", {
-                    //     method: "POST",
-                    //     body: file,
-                    //     headers: {
-                    //         "Content-Type": "application/octet-stream"
-                    //     }
-                    // })
-                    // .then(res => res.json())
-                    // .then(res => {
-                    //     console.log(res)
-                    //     document.getElementById("uploadprogress").value += res.progress
-                    // draw the files
-                    // yourfiles = localstorage.get(files)
-                    // for (i = 0; i < yourfiles.length; i++) {
-                    // draw each
-                    // }
-                    // }
                 }
+
+                reader.readAsText(file)
+
+                // yourfiles.push(filename)
+                // localstorage.add(files, yourfiles)
+                // fetch("api", {
+                //     method: "POST",
+                //     body: file,
+                //     headers: {
+                //         "Content-Type": "application/octet-stream"
+                //     }
+                // })
+                // .then(res => res.json())
+                // .then(res => {
+                //     console.log(res)
+                //     document.getElementById("uploadprogress").value += res.progress
+                // draw the files
+                // yourfiles = localstorage.get(files)
+                // for (i = 0; i < yourfiles.length; i++) {
+                // draw each
+                // }
+                // }
+            }
             // document.getElementById("uploadprogress").value = 100
             progressor = setInterval(() => {
                 document.getElementById("uploadprogress").value++
