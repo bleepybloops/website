@@ -721,7 +721,7 @@
         document.getElementById("uploader").addEventListener("change", processFiles)
 
         document.onpaste = (e) => {
-            var text = e.clipboardData.getData('text/plain')
+            var text = e.clipboardData.getData('Text')
             e.preventDefault()
             console.log(text)
             if (text.length <= 0) return
