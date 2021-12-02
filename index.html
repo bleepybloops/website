@@ -729,7 +729,7 @@
             }else if (text.match(/^(?:(https?):\/\/)?(?:(?:www|m)\.)?(soundcloud\.com|snd\.sc)\/(.*)$/)) {
                 alert("Got soundcloud link: "+text)
             } else {
-                alert("Got text: "+text)
+                console.log("Not a youtube or soundcloud link: "+text)
             }
         }
 
