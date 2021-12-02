@@ -518,40 +518,37 @@
         <h3></h3>
         <br>
 
-        <span>
-            <div class="audioplayer">
-                <em>kirby space house (jazz & bass house fusion):</em>
-                <audio src="https://media1.vocaroo.com/mp3/1o8Ie98LWbT5" controls></audio>
-            </div>
-            <div class="audioplayer">
-                <em>technooooo (trancy, psy techno):</em>
-                <audio src="https://media1.vocaroo.com/mp3/1ncmWICv2O7t" controls></audio>
-            </div>
-            <div class="audioplayer">
-                <em>kayak bong (memey dubstep, preview):</em>
-                <audio src="https://media1.vocaroo.com/mp3/1dQwMdckWLaQ" controls></audio>
-            </div>
-            <div class="audioplayer">
-                <em>to be continued (not-hard-enough dubstep):</em>
-                <audio src="https://media1.vocaroo.com/mp3/1gbtmkhK89mS" controls></audio>
-            </div>
+        <div class="audioplayer">
+            <em>kirby space house (jazz & bass house fusion):</em>
+            <audio src="https://media1.vocaroo.com/mp3/1o8Ie98LWbT5" controls></audio>
+        </div>
+        <div class="audioplayer">
+            <em>technooooo (trancy, psy techno):</em>
+            <audio src="https://media1.vocaroo.com/mp3/1ncmWICv2O7t" controls></audio>
+        </div>
+        <div class="audioplayer">
+            <em>kayak bong (memey dubstep, preview):</em>
+            <audio src="https://media1.vocaroo.com/mp3/1dQwMdckWLaQ" controls></audio>
+        </div>
+        <div class="audioplayer hidden">
+            <em>to be continued (not-hard-enough dubstep):</em>
+            <audio src="https://media1.vocaroo.com/mp3/1gbtmkhK89mS" controls></audio>
+        </div>
+        <div class="audioplayer hidden">
+            <em>synplant riddim (high frequencies briddim):</em>
+            <audio src="https://media1.vocaroo.com/mp3/1bT2C6am8uNG" controls></audio>
+        </div>
+        <div class="audioplayer hidden">
+            <em>get a brick (just a beat, soon feat. neural, trap rap):</em>
+            <audio src="https://media1.vocaroo.com/mp3/16GvkMNdXPpr" controls></audio>
+        </div>
+        <div class="audioplayer hidden">
+            <em style="width: 100%;">several of the above tracks are placeholder tracks or unfinished. please check back
+                later for the full
+                releases!</em>
+        </div>
         </span>
-        <span class="hidden" id="show_more">
-            <div class="audioplayer">
-                <em>synplant riddim (high frequencies briddim):</em>
-                <audio src="https://media1.vocaroo.com/mp3/1bT2C6am8uNG" controls></audio>
-            </div>
-            <div class="audioplayer">
-                <em>get a brick (just a beat, soon feat. neural, trap rap):</em>
-                <audio src="https://media1.vocaroo.com/mp3/16GvkMNdXPpr" controls></audio>
-            </div>
-            <div class="audioplayer">
-                <em style="width: 100%;">several of the above tracks are placeholder tracks or unfinished. please check back
-                    later for the full
-                    releases!</em>
-            </div>
-        </span>
-        <button class="button purple" type="button" onclick="document.getElementById('show_more').style.display = 'block'">show more</button>
+        <button class="button purple" type="button" onclick="document.querySelectorAll('.audioplayer.hidden').forEach(e => e.style.display = 'block')">show more</button>
 
         <h3>a playlist of songs that have inspired my music taste or production</h3>
         <div class="audioplayer" style="display:block;">
