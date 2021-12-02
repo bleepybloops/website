@@ -723,6 +723,7 @@
         document.onpaste = (e) => {
             e.preventDefault()
             var text = e.clipboardData.getData('text/plain')
+            console.log(text)
             if (text.length <= 0) return
             if (text.match(/^(?:(https?):\/\/)?(?:(?:www|m)\.)?youtube\.com\/watch.*v=([a-zA-Z0-9_-]+)/)) {
                 alert("Got youtube link: ", text)
