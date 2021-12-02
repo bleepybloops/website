@@ -556,6 +556,8 @@
     <section>
         <h3>drop a file anywhere on this page</h3>
         <p>this does not work yet since it is not connected to a backend. we're still developing over here :)</p>
+        <p>you can also paste a youtube or soundcloud link anywhere on this page to convert it to mp3</p>
+
         <label for="uploader">...or click here to select files</label>
         <input type="file" name="uploader" id="uploader" multiple>
 
@@ -565,19 +567,7 @@
 
         <div id="uploads"></div>
 
-        <h3>paste a youtube or soundcloud link anywhere on this page to convert it to mp3</h3>
-        <script>document.onpaste = (e) => {
-            e.preventDefault()
-            var text = e.clipboardData.getData('text/plain')
-            if (text.length <= 0) return
-            if (text.match(/^(?:(https?):\/\/)?(?:(?:www|m)\.)?youtube\.com\/watch.*v=([a-zA-Z0-9_-]+)/)) {
-                alert("Got youtube link: ", text)
-            }else if (text.match(/^(?:(https?):\/\/)?(?:(?:www|m)\.)?(soundcloud\.com|snd\.sc)\/(.*)$/)) {
-                alert("Got soundcloud link: ", text)
-            }else{
-                alert("Not a youtube or soundcloud link: ", text)
-            }
-        }</script>
+        
     </section>
 
     <p>&copy; 2021 Lyra Cooley</p>
@@ -730,7 +720,19 @@
         document.onload = document.getElementById("uploadprogress").style.display = "none"
         document.getElementById("uploader").addEventListener("change", processFiles)
 
-        // document.onpaste silent youtube/soundcloud to mp3 converter
+        document.onpaste = (e) => {
+            e.preventDefault()
+            var text = e.clipboardData.getData('text/plain')
+            if (text.length <= 0) return
+            if (text.match(/^(?:(https?):\/\/)?(?:(?:www|m)\.)?youtube\.com\/watch.*v=([a-zA-Z0-9_-]+)/)) {
+                alert("Got youtube link: ", text)
+            }else if (text.match(/^(?:(https?):\/\/)?(?:(?:www|m)\.)?(soundcloud\.com|snd\.sc)\/(.*)$/)) {
+                alert("Got soundcloud link: ", text)
+            }else{
+                alert("Not a youtube or soundcloud link: ", text)
+            }
+        }
+
     </script>
 
 </body>
