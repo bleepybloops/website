@@ -587,7 +587,7 @@
                 later for the full releases!</em>
         </div>
         </span>
-        <button class="button purple" type="button" onclick="document.querySelectorAll('.audioplayer.hidden').forEach(e => e.classList.remove('hidden'))">show more</button>
+        <button class="button purple" type="button" onclick="document.querySelectorAll('.audioplayer.hidden').forEach(e => e.classList.toggle('hidden'));this.innerText=this.innerText=='show more'?'show less':'show more'">show more</button>
 
         <!-- <details>
             <summary>a playlist of songs that have inspired my music taste or production</summary>
