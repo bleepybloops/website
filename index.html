@@ -444,11 +444,7 @@
          ::-webkit-scrollbar-corner {
             background: rgba(0, 0, 0, 0);
         }
-        /* audio::-webkit-media-controls-current-time-display,
-        audio::-webkit-media-controls-time-remaining-display {
-            color: white;
-            text-shadow: none;
-        } */
+
     </style>
 </head>
 
@@ -457,8 +453,6 @@
     <canvas id="bg"></canvas>
 
     <header>
-        <!-- https://pbs.twimg.com/profile_images/1433199121515515911/dDZD_ckM_400x400.jpg sipthestarlight -->
-        <!-- https://pbs.twimg.com/profile_images/1431216769465679878/65MYa5iL_400x400.jpg bleepybloops -->
         <img src="https://pbs.twimg.com/profile_images/1433199121515515911/dDZD_ckM_400x400.jpg" alt="Bleepy Bloops">
         <div>
             <h1>bleepy bloops</h1>
@@ -473,7 +467,6 @@
             </p>
         </div>
 
-        <!-- <p>&copy; 2021 bleepybloops</p> -->
     </header>
 
     <section>
@@ -537,19 +530,6 @@
     </section>
     -->
 
-    <!-- <section>
-        <h3>drop a file anywhere on this page</h3>
-        <p>this does not work yet since it is not connected to a backend. we're still developing over here :)</p>
-        <label for="uploader">...or click here to select files</label>
-        <input type="file" name="uploader" id="uploader" multiple>
-
-        <progress id="uploadprogress" value="32" max="100"></progress>
-
-        <p style="text-align: center;margin-top: 15px;">your uploaded files display here:</p>
-
-        <div id="uploads"></div>
-
-    </section> -->
     <!-- 
     <section>
         <h3>??????</h3>
@@ -573,9 +553,24 @@
         </div>
     </section>
 
+    <section>
+        <h3>drop a file anywhere on this page</h3>
+        <p>this does not work yet since it is not connected to a backend. we're still developing over here :)</p>
+        <label for="uploader">...or click here to select files</label>
+        <input type="file" name="uploader" id="uploader" multiple>
+
+        <progress id="uploadprogress" value="32" max="100"></progress>
+
+        <p style="text-align: center;margin-top: 15px;">your uploaded files display here:</p>
+
+        <div id="uploads"></div>
+
+    </section>
+
     <p>&copy; 2021 Lyra Cooley</p>
 
     <script>
+        // particles
         canvas = document.getElementById("bg")
         ctx = canvas.getContext("2d")
 
@@ -632,21 +627,7 @@
             return false
         }
 
-        // moonDropdown = document.querySelector(".moon-dropdown")
-        // moon = document.querySelector(".moon")
-
-        // toggler = function(e) {
-        //     if (e.target.classList.contains("moon") || isDescendantOf(moon, e.target)) {
-        //         moonDropdown.classList.toggle('hidden')
-        //         return
-        //     }
-        //     if (!isDescendantOf(moonDropdown, e.target) && !e.target.classList.contains("moon") && !e.target.classList.contains("moon-dropdown")) {
-        //         moonDropdown.classList.add("hidden")
-        //         return
-        //     }
-        // }
-        // document.addEventListener("click", toggler)
-
+        // drag and drop uploads
         document.addEventListener("dragover", (e) => {
             e.preventDefault()
             document.getElementById("uploads").scrollTop = 0
