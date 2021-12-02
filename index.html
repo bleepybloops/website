@@ -495,7 +495,7 @@
     <section>
 
         <h3>hi, i'm lyra. i make experimental genre-bending electronic music as <span style="font-family: 'Birthstone',cursive;font-size:1.25em;">bleepy bloops</span>.</h3>
-
+        <h3 class="tooltip hidden">ˈlērə not ˈlaɪrə</h3>
         <h3></h3>
         <br>
 
@@ -515,19 +515,22 @@
             <em>to be continued (not-hard-enough dubstep):</em>
             <audio src="https://media1.vocaroo.com/mp3/1gbtmkhK89mS" controls></audio>
         </div>
-        <div class="audioplayer">
-            <em>synplant riddim (high frequencies briddim):</em>
-            <audio src="https://media1.vocaroo.com/mp3/1bT2C6am8uNG" controls></audio>
+        <div class="hidden" id="show_more">
+            <div class="audioplayer">
+                <em>synplant riddim (high frequencies briddim):</em>
+                <audio src="https://media1.vocaroo.com/mp3/1bT2C6am8uNG" controls></audio>
+            </div>
+            <div class="audioplayer">
+                <em>get a brick (just a beat, soon feat. neural, trap rap):</em>
+                <audio src="https://media1.vocaroo.com/mp3/16GvkMNdXPpr" controls></audio>
+            </div>
+            <div class="audioplayer">
+                <em style="width: 100%;">several of the above tracks are placeholder tracks or unfinished. please check back
+                    later for the full
+                    releases!</em>
+            </div>
         </div>
-        <div class="audioplayer">
-            <em>get a brick (just a beat, soon feat. neural, trap rap):</em>
-            <audio src="https://media1.vocaroo.com/mp3/16GvkMNdXPpr" controls></audio>
-        </div>
-        <div class="audioplayer">
-            <em style="width: 100%;">several of the above tracks are placeholder tracks or unfinished. please check back
-                later for the full
-                releases!</em>
-        </div>
+        <button class="button" type="button" onclick="document.getElementById('show_more').style.display = 'block'">show more</button>
 
         <h3>a playlist of songs that have inspired my music taste or production</h3>
         <div class="audioplayer" style="display:block;">
