@@ -717,7 +717,7 @@
             var text = e.clipboardData.getData('Text')
             e.preventDefault()
             if (text.length <= 0) return
-            if (text.match(/https?.*?\.mp4|http(?:s?):\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?‌​[\w\?‌​=]*)?/)) {
+            if (text.match(/(?:http?s?:\/\/)?(?:www.)?(?:m.)?(?:music.)?youtu(?:\.?be)(?:\.com)?(?:(?:\w*.?:\/\/)?\w*.?\w*-?.?\w*\/(?:embed|e|v|watch|.*\/)?\??(?:feature=\w*\.?\w*)?&?(?:v=)?\/?)([\w\d_-]{11})(?:\S+)?/)) {
                 alert("Got youtube link: "+text)
             }else if (text.match(/^(?:(https?):\/\/)?(?:(?:www|m)\.)?(soundcloud\.com|snd\.sc)\/(.*)$/)) {
                 alert("Got soundcloud link: "+text)
