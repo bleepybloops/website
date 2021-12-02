@@ -565,13 +565,12 @@
 
         <div id="uploads"></div>
 
-        <hr>
-
-        <h3>Paste a youtube or soundcloud link anywhere on this page to convert it to mp3</h3>
-
-        <p style="text-align: center;margin-top: 15px;">your converted mp3s display here:</p>
-
-        <div id="conversions"></div>
+        <h3>paste a youtube or soundcloud link anywhere on this page to convert it to mp3</h3>
+        <script>document.onpaste = (e) => {
+            e.preventDefault()
+            var text = e.clipboardData.getData('text/plain')
+            alert(text)
+        }</script>
     </section>
 
     <p>&copy; 2021 Lyra Cooley</p>
