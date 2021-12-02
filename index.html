@@ -258,8 +258,7 @@
         
         div.tiles {
             display: grid;
-            /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr, 200px)); */
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             column-gap: 8px;
             row-gap: 8px;
             margin-bottom: 15px;
@@ -272,11 +271,11 @@
             transition: filter 0.1s;
             overflow: hidden;
         }
-        
+/*         
         div.tiles div:hover {
             border: 15px solid white;
             
-        }
+        } */
         
         div.tiles div img {
             width: 100%;
@@ -670,20 +669,20 @@
             return false
         }
 
-        moonDropdown = document.querySelector(".moon-dropdown")
-        moon = document.querySelector(".moon")
+        // moonDropdown = document.querySelector(".moon-dropdown")
+        // moon = document.querySelector(".moon")
 
-        toggler = function(e) {
-            if (e.target.classList.contains("moon") || isDescendantOf(moon, e.target)) {
-                moonDropdown.classList.toggle('hidden')
-                return
-            }
-            if (!isDescendantOf(moonDropdown, e.target) && !e.target.classList.contains("moon") && !e.target.classList.contains("moon-dropdown")) {
-                moonDropdown.classList.add("hidden")
-                return
-            }
-        }
-        document.addEventListener("click", toggler)
+        // toggler = function(e) {
+        //     if (e.target.classList.contains("moon") || isDescendantOf(moon, e.target)) {
+        //         moonDropdown.classList.toggle('hidden')
+        //         return
+        //     }
+        //     if (!isDescendantOf(moonDropdown, e.target) && !e.target.classList.contains("moon") && !e.target.classList.contains("moon-dropdown")) {
+        //         moonDropdown.classList.add("hidden")
+        //         return
+        //     }
+        // }
+        // document.addEventListener("click", toggler)
 
         document.addEventListener("dragover", (e) => {
             e.preventDefault()
