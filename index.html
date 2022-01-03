@@ -689,8 +689,10 @@
                 p.y += p.dy
                 p.alpha -= 0.001
                 if (p.alpha <= 0) {
-                    particles.removeAt(i)
-                    particles.push(initParticle())
+                    p.x = Math.random() * canvas.width,
+                    p.y = Math.random() * canvas.height,
+                    p.alpha = Math.random() * 0.5
+                    p.dy =  Math.random() * 0.8
                 }
                 ctx.beginPath()
                 ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2, false)
