@@ -687,11 +687,9 @@
                 var p = particles[i]
                 p.x += p.dx
                 p.y += p.dy
-                p.alpha -= 0.01
+                p.alpha -= 0.001
                 if (p.alpha <= 0) {
-                    p.alpha = 0.5
-                    p.x = Math.random() * canvas.width
-                    p.y = Math.random() * canvas.height
+                    p = initParticle()
                 }
                 ctx.beginPath()
                 ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2, false)
