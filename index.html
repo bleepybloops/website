@@ -668,17 +668,17 @@
         }
 
         // visualizer
-        audiosource = document.getElementById("kenopsiatest")
-        actx = new AudioContext()
-        analyser = actx.createAnalyser()
-        analyser.fftSize = 2048
-        source = actx.createMediaElementSource(audiosource)
-        source.connect(analyser)
-        analyser.connect(actx.destination)
-        data = new Uint8Array(analyser.frequencyBinCount)
-        audiosource.onplay = () => {
-            actx.resume()
-        }
+        // audiosource = document.getElementById("kenopsiatest")
+        // actx = new AudioContext()
+        // analyser = actx.createAnalyser()
+        // analyser.fftSize = 2048
+        // source = actx.createMediaElementSource(audiosource)
+        // source.connect(analyser)
+        // analyser.connect(actx.destination)
+        // data = new Uint8Array(analyser.frequencyBinCount)
+        // audiosource.onplay = () => {
+        //     actx.resume()
+        // }
 
         draw = (data) => {
             requestAnimationFrame(draw)
