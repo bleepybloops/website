@@ -681,6 +681,7 @@
         }
 
         setInterval(function() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
 
             // visualizer
             analyser.getByteFrequencyData(data)
@@ -693,9 +694,7 @@
                 ctx.stroke()
             })
 
-
-            ctx.clearRect(0, 0, canvas.width, canvas.height)
-
+            // particles
             for (p in particles) {
                 particles[p].alpha -= 0.001
                 if (particles[p].alpha <= 0) {
