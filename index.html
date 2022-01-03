@@ -680,38 +680,65 @@
             actx.resume()
         }
 
-        setInterval(function() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height)
-
-            // visualizer
+        draw = (data) => {
+            requestAnimationFrame(draw)
             analyser.getByteFrequencyData(data)
-            data = [...data]
-            space = canvas.width / data.length
-            data.forEach((value,i)=>{
-                ctx.beginPath()
-                ctx.moveTo(space*i,canvas.height)
-                ctx.lineTo(space*i,canvas.height-value)
-                ctx.stroke()
-            })
-
-            // particles
-            for (p in particles) {
-                particles[p].alpha -= 0.001
-                if (particles[p].alpha <= 0) {
-                    particles[p] = initParticle()
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+            for (var i = 0; i < particles.length; i++) {
+                var p = particles[i]
+                // p.dx and p.dy should be modified by the audio data
+                // lower on the screen = lower frequency
+                // higher amplitude = more random movement
+                p.dx = (data[Math.floor(p.x / (canvas.width / data.length))] / 255.0) * 0.5
+                p.dy = (data[Math.floor(p.y / (canvas.height / data.length))] / 255.0) * 0.5
+                p.x += p.dx
+                p.y += p.dy
+                p.alpha -= 0.01
+                if (p.alpha <= 0) {
+                    p.alpha = 0.5
+                    p.x = Math.random() * canvas.width
+                    p.y = Math.random() * canvas.height
                 }
-                if (particles[p].y > canvas.height) {
-                    particles[p].y = 0
-                }
-                particles[p].x += particles[p].dx
-                particles[p].y += particles[p].dy
-
                 ctx.beginPath()
-                ctx.arc(particles[p].x, particles[p].y, particles[p].radius, 0, Math.PI * 2, false)
-                ctx.fillStyle = "rgba(255, 255, 255, " + particles[p].alpha + ")"
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2, false)
+                ctx.fillStyle = "rgba(255,255,255," + p.alpha + ")"
                 ctx.fill()
             }
-        }, 1000 / 60)
+        }
+        requestAnimationFrame(draw)
+
+        // setInterval(function(data) {
+        //     ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+        //     analyser.getByteFrequencyData(data)
+        //     // visualizer
+        //     data = [...data]
+        //     space = canvas.width / data.length
+        //     data.forEach((value,i)=>{
+        //         ctx.beginPath()
+        //         ctx.moveTo(space*i,canvas.height)
+        //         ctx.lineTo(space*i,canvas.height-value)
+        //         ctx.stroke()
+        //     })
+
+        //     // particles
+        //     for (p in particles) {
+        //         particles[p].alpha -= 0.001
+        //         if (particles[p].alpha <= 0) {
+        //             particles[p] = initParticle()
+        //         }
+        //         if (particles[p].y > canvas.height) {
+        //             particles[p].y = 0
+        //         }
+        //         particles[p].x += particles[p].dx
+        //         particles[p].y += particles[p].dy
+
+        //         ctx.beginPath()
+        //         ctx.arc(particles[p].x, particles[p].y, particles[p].radius, 0, Math.PI * 2, false)
+        //         ctx.fillStyle = "rgba(255, 255, 255, " + particles[p].alpha + ")"
+        //         ctx.fill()
+        //     }
+        // }, 1000 / 60)
 
         isDescendantOf = (parent, child) => {
             node = child.parentNode
