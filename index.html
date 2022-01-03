@@ -680,7 +680,7 @@
         //     actx.resume()
         // }
 
-        draw = (data) => {
+        draw = () => {
             requestAnimationFrame(draw)
             ctx.clearRect(0, 0, canvas.width, canvas.height)
             for (p in particles) {
@@ -696,7 +696,7 @@
                 ctx.fill()
             }
         }
-        draw(data)
+        draw()
 
         // setInterval(function(data) {
         //     ctx.clearRect(0, 0, canvas.width, canvas.height)
