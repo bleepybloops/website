@@ -682,15 +682,9 @@
 
         draw = (data) => {
             requestAnimationFrame(draw)
-            analyser.getByteFrequencyData(data)
             ctx.clearRect(0, 0, canvas.width, canvas.height)
             for (var i = 0; i < particles.length; i++) {
                 var p = particles[i]
-                // p.dx and p.dy should be modified by the audio data
-                // lower on the screen = lower frequency
-                // higher amplitude = more random movement
-                p.dx = (data[Math.floor(p.x / (canvas.width / data.length))] / 255.0) * 0.5
-                p.dy = (data[Math.floor(p.y / (canvas.height / data.length))] / 255.0) * 0.5
                 p.x += p.dx
                 p.y += p.dy
                 p.alpha -= 0.01
