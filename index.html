@@ -702,15 +702,17 @@
             }
             if (!audiosource.paused){
                 analyser.getByteFrequencyData(data)
-                // draw frequency lines on a log scale
+                // draw frequency lines
+                // each line is full height, alpha is controlled by amplitude
                 for (var i = 0; i < data.length; i++) {
-                    var percent = data[i] / 256
+                    var value = data[i]
+                    var percent = value / 256
                     var height = canvas.height * percent
                     var offset = canvas.height - height
                     var barWidth = canvas.width / data.length
                     var hue = i / data.length * 360
                     ctx.fillStyle = "hsl(" + hue + ", 100%, 50%)"
-                    ctx.fillRect(i * barWidth, offset, barWidth/2, height)
+                    ctx.fillRect(i * barWidth, offset, barWidth, height)
                 }
             }
         }, 1000 / 60)
