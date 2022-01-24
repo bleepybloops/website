@@ -711,8 +711,9 @@
                     total += data[i]
                 }
                 var avg = total / data.length
-                document.querySelector('header>img').style.outlineWidth = avg + "px"
-
+                pfp = document.querySelector('header>img')
+                pfp.style.outlineWidth = (25 * avg/255) + "px"
+                pfp.style.outlineColor = "rgba(255, 255, 255, " + avg/255 + ")"
             }
         }, 1000 / 60)
 
