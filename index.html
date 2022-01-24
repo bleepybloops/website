@@ -718,7 +718,7 @@
                 var avg = total / data.length
                 pfp = document.querySelector('header>img')
                 pfp.style.outlineWidth = (100 * avg/255) + "px"
-                pfp.style.outlineColor = "rgba(255, 128, 255, " + ((avg/255)-0.5) + ")"
+                pfp.style.outlineColor = "rgba(255, 128, 255, " + (avg*avg/128*128) + ")"
             }
         }, 1000 / 60)
 
