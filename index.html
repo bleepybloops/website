@@ -675,20 +675,20 @@
         // it will be ghost controlled by the visible audio elements
         // so that the audio elements can be controlled independently
         // but I can analyze just one audio element so I dont have to give them all IDs
-        audio = document.createElement("audio")
-        audio.setAttribute("autoplay", "")
-        audio.setAttribute("loop", "")
-        audio.setAttribute("crossorigin", "anonymous")
-        audio.setAttribute("style", "display:none;")
-        document.body.appendChild(audio)
+        // audio = document.createElement("audio")
+        // audio.setAttribute("autoplay", "")
+        // audio.setAttribute("loop", "")
+        // audio.setAttribute("crossorigin", "anonymous")
+        // audio.setAttribute("style", "display:none;")
+        // document.body.appendChild(audio)
 
         document.querySelectorAll('audio').onplay = () => {
-            // mute all other audio
+            // pause all other audio
             document.querySelectorAll('audio').forEach(e => {
-                if (e != audio) e.muted = true
+                if (e != audio) e.paused = true
             })
-            audio.src = e.src
-            console.log(audio.src)
+            // audio.src = e.src
+            // console.log(audio.src)
             // make audio context and analyzer from source etc etc
         }
 
