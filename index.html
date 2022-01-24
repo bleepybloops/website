@@ -700,15 +700,26 @@
                 ctx.fillStyle = "rgba(255, 255, 255, " + particles[p].alpha + ")"
                 ctx.fill()
             }
+            var toLog = function(value, min, max){
+                var exp = (value-min) / (max-min);
+                return min * Math.pow(max/min, exp);
+            }
             if (!audiosource.paused){
                 analyser.getByteFrequencyData(data)
                 // draw lines
                 for (var i = 0; i < data.length; i++) {
-                    var value = data[i] / 2
+                    var logIndex = toLog(data[i]/2, 0, 255)
+                    var low = Math.floor(logindex);
+                    var high = Math.ceil(logindex);
+                    var lv = data[low];
+                    var hv = data[high];
+                    var w = (logindex-low)/(high-low);
+                    var value = lv + (hv-lv)*w;
+                    
                     var percent = value / 256
                     var height = canvas.height * percent
                     var offset = canvas.height - height - 1
-                    var barWidth = canvas.width / data.length*2
+                    var barWidth = canvas.width / data.length
                     var hue = i / data.length * 360
                     ctx.fillStyle = "hsl(" + hue + ", 100%, 50%)"
                     ctx.fillRect(i * barWidth, offset, barWidth, height)
