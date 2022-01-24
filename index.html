@@ -59,6 +59,7 @@
             height: auto;
             /* margin-bottom: 25px; */
             margin-right: 75px;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
         }
         
         header p span {
@@ -702,21 +703,9 @@
             }
             if (!audiosource.paused){
                 analyser.getByteFrequencyData(data)
-                // draw frequency lines
-                // each line is full height, alpha is controlled by amplitude
-                for (var i = 0; i < data.length; i++) {
-                    var value = data[i]
-                    var percent = value / 256
-                    var height = canvas.height * percent
-                    var offset = canvas.height - height
-                    var barWidth = canvas.width / data.length
-                    var alpha = percent/2
-                    ctx.fillStyle = "rgba(255, 255, 255, " + alpha + ")"
-                    // make ellipse at data point
-                    ctx.beginPath()
-                    ctx.ellipse(i * barWidth, height, barWidth, barWidth, 0, 0, Math.PI * 2)
-                    ctx.fill()
-                }
+                
+                // get overall amplitude
+
             }
         }, 1000 / 60)
 
