@@ -710,8 +710,7 @@
                     var height = canvas.height * percent
                     var offset = canvas.height - height
                     var barWidth = canvas.width / data.length
-                    var hue = i / data.length * 360
-                    ctx.fillRect(i * barWidth * 10/i, offset, barWidth, height)
+                    ctx.fillRect(i * barWidth, offset, barWidth, height)
                 }
             }
         }, 1000 / 60)
