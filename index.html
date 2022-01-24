@@ -678,6 +678,9 @@
         data = new Uint8Array(analyser.frequencyBinCount)
         audiosource.onplay = () => {
             actx.resume()
+            
+                    // use data from analyzer
+                    analyser.getByteFrequencyData(data)
         }
 
         setInterval(function() {
@@ -702,9 +705,6 @@
 
 
                 if (!audiosource.paused){
-                    
-                    // use data from analyzer
-                    analyser.getByteFrequencyData(data)
 
                     // draw lines
                     for (var i = 0; i < data.length; i++) {
