@@ -671,6 +671,27 @@
             particles.push(initParticle())
         }
 
+        // make hidden audio element to read analyzer data from
+        // it will be ghost controlled by the visible audio elements
+        // so that the audio elements can be controlled independently
+        // but I can analyze just one audio element so I dont have to give them all IDs
+        audio = document.createElement("audio")
+        audio.setAttribute("autoplay", "")
+        audio.setAttribute("loop", "")
+        audio.setAttribute("crossorigin", "anonymous")
+        audio.setAttribute("style", "display:none;")
+        document.body.appendChild(audio)
+
+        document.querySelectorAll('audio').onplay = () => {
+            // mute all other audio
+            document.querySelectorAll('audio').forEach(e => {
+                if (e != audio) e.muted = true
+            })
+            audio.src = e.src
+            console.log(audio.src)
+            // make audio context and analyzer from source etc etc
+        }
+
         // visualizer
         audiosource = document.getElementById("kenopsiaplayer")
         actx = new AudioContext()
@@ -717,7 +738,7 @@
                 }
                 var avg = total / data.length
                 pfp = document.querySelector('header>img')
-                pfp.style.outlineWidth = (100 * avg/255) + "px"
+                pfp.style.outlineWidth = (80 * avg/255) + "px"
                 pfp.style.outlineColor = "rgba(255, 128, 255, " + (avg/512) + ")"
             }
         }, 1000 / 60)
