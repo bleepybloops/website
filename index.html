@@ -711,8 +711,7 @@
                     var offset = canvas.height - height
                     var barWidth = canvas.width / data.length
                     var hue = i / data.length * 360
-                    ctx.fillStyle = "hsl(" + hue + ", 100%, 50%)"
-                    ctx.fillRect(i * barWidth, offset, barWidth, height)
+                    ctx.fillRect(i * barWidth * 10/i, offset, barWidth, height)
                 }
             }
         }, 1000 / 60)
