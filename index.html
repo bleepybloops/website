@@ -485,7 +485,7 @@
 
     <section>
 
-        <h3>hi, i'm <span style="border-bottom: 1px dotted #666;cursor: help;" title="ˈlērə not ˈlaɪrə" onclick="">lyra</span>. i make experimental genre-bending electronic music as <span style="font-family: 'Birthstone',cursive;font-size:1.25em;">bleepy bloops</span>.</h3>
+        <h3>hi, i'm <span style="border-bottom: 1px dotted #666;cursor: help;" title="ˈlērə not ˈlaɪrə" onclick="">lyra</span>. i make genre-bending experimental electronic music as <span style="font-family: 'Birthstone',cursive;font-size:1.25em;">bleepy bloops</span>.</h3>
         <br>
 
         <!-- releases -->
@@ -668,17 +668,17 @@
         }
 
         // visualizer
-        // audiosource = document.getElementById("kenopsiatest")
-        // actx = new AudioContext()
-        // analyser = actx.createAnalyser()
-        // analyser.fftSize = 2048
-        // source = actx.createMediaElementSource(audiosource)
-        // source.connect(analyser)
-        // analyser.connect(actx.destination)
-        // data = new Uint8Array(analyser.frequencyBinCount)
-        // audiosource.onplay = () => {
-        //     actx.resume()
-        // }
+        audiosource = document.getElementById("kenopsiatest")
+        actx = new AudioContext()
+        analyser = actx.createAnalyser()
+        analyser.fftSize = 2048
+        source = actx.createMediaElementSource(audiosource)
+        source.connect(analyser)
+        analyser.connect(actx.destination)
+        data = new Uint8Array(analyser.frequencyBinCount)
+        audiosource.onplay = () => {
+            actx.resume()
+        }
 
         setInterval(function() {
             ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -699,6 +699,21 @@
                 ctx.arc(particles[p].x, particles[p].y, particles[p].radius, 0, Math.PI * 2, false)
                 ctx.fillStyle = "rgba(255, 255, 255, " + particles[p].alpha + ")"
                 ctx.fill()
+
+                // use data from analyzer
+                analyser.getByteFrequencyData(data)
+
+                // draw lines
+                for (var i = 0; i < data.length; i++) {
+                    var value = data[i] / 2
+                    var percent = value / 256
+                    var height = canvas.height * percent
+                    var offset = canvas.height - height - 1
+                    var barWidth = canvas.width / data.length
+                    var hue = i / data.length * 360
+                    ctx.fillStyle = "hsl(" + hue + ", 100%, 50%)"
+                    ctx.fillRect(i * barWidth, offset, barWidth, height)
+                }
             }
         }, 1000 / 60)
 
