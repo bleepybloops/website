@@ -496,7 +496,7 @@
         </div> -->
         <div class="audioplayer">
             <em>eleverix - kenopsia remix</em>
-            <audio src="https://storage.googleapis.com/lyras-music/kenopsia%20remix%206%20new%20drop%20bit.flac" controls></audio>
+            <audio src="https://storage.googleapis.com/lyras-music/kenopsia%20remix%206%20new%20drop%20bit.flac" id="kenopsiaplayer" controls></audio>
         </div>
         <div class="audioplayer">
             <em>bvssy</em>
@@ -668,7 +668,7 @@
         }
 
         // visualizer
-        audiosource = document.getElementById("kenopsiatest")
+        audiosource = document.getElementById("kenopsiaplayer")
         actx = new AudioContext()
         analyser = actx.createAnalyser()
         analyser.fftSize = 2048
