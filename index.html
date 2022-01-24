@@ -60,6 +60,10 @@
             /* margin-bottom: 25px; */
             margin-right: 75px;
         }
+
+        header>img {
+            outline: 0px rgba(255,255,255,0.5) solid;
+        }
         
         header p span {
             white-space: nowrap;
@@ -702,13 +706,13 @@
             }
             if (!audiosource.paused){
                 analyser.getByteFrequencyData(data)
-                // figure out average amplitude over all frequencies, and use that to scale the outline-width of the header>img
                 var total = 0
                 for (var i = 0; i < data.length; i++) {
                     total += data[i]
                 }
                 var avg = total / data.length
                 document.querySelector('header>img').style.outlineWidth = avg + "px"
+
             }
         }, 1000 / 60)
 
