@@ -709,7 +709,7 @@
                 ctx.fill()
             }
             if (!audiosource.paused){
-                analyser.getByteFrequencyData(data)
+                analyser.getByteFrequencyData(data.splice(0, data.length*3/4))
                 var total = 0
                 for (var i = 0; i < data.length; i++) {
                     total += data[i]
@@ -717,7 +717,7 @@
                 var avg = total / data.length
                 pfp = document.querySelector('header>img')
                 pfp.style.outlineWidth = (100 * avg/255) + "px"
-                pfp.style.outlineColor = "rgba(255, 255, 255, " + avg/512 + ")"
+                pfp.style.outlineColor = "rgba(255, 128, 255, " + avg/512 + ")"
             }
         }, 1000 / 60)
 
