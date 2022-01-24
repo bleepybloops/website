@@ -712,8 +712,7 @@
                     var barWidth = canvas.width / data.length
                     var alpha = percent
                     ctx.fillStyle = "rgba(255, 255, 255, " + alpha + ")"
-                    ctx.fillRect(i * barWidth/2, offset, barWidth, height)
-                    ctx.fillRect(width-(i * barWidth/2), offset, barWidth, height)
+                    ctx.fillRect(i * barWidth, offset, barWidth/2, height)
                 }
             }
         }, 1000 / 60)
