@@ -709,7 +709,8 @@
                 ctx.fill()
             }
             if (!audiosource.paused){
-                analyser.getByteFrequencyData(data.splice(0, data.length*3/4))
+                // ignore high frequencies
+                analyser.getByteFrequencyData(data.splice(0, data.length*4/5))
                 var total = 0
                 for (var i = 0; i < data.length; i++) {
                     total += data[i]
