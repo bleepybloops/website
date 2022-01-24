@@ -700,11 +700,12 @@
                 ctx.fillStyle = "rgba(255, 255, 255, " + particles[p].alpha + ")"
                 ctx.fill()
 
-                // use data from analyzer
-                analyser.getByteFrequencyData(data)
 
                 if (!audiosource.paused){
                     
+                    // use data from analyzer
+                    analyser.getByteFrequencyData(data)
+
                     // draw lines
                     for (var i = 0; i < data.length; i++) {
                         var value = data[i] / 2
