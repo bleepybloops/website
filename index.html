@@ -683,6 +683,10 @@
         audiosource.onplay = () => {
             actx.resume()
         }
+        audiosource.onpause = () => {
+            pfp = document.querySelector('header>img')
+            pfp.style.outline = "0px rgba(255,255,255,0.5) solid"
+        }
 
         setInterval(function() {
             ctx.clearRect(0, 0, canvas.width, canvas.height)
