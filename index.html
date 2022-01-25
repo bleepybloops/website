@@ -706,7 +706,6 @@
         }
         audiosource.onpause = () => {
             pfp = document.querySelector('header>img')
-            pfp.style.outline = "0px rgba(255,255,255,0.5) solid"
         }
 
         setInterval(function() {
@@ -739,7 +738,9 @@
                 var avg = total / data.length
                 pfp = document.querySelector('header>img')
                 pfp.style.outlineWidth = (80 * avg/255) + "px"
-                pfp.style.outlineColor = "rgba(255, 128, 255, " + (avg/512) + ")"
+                // 189, 179, 208
+                // https://convertingcolors.com/rgb-color-20_11_34.html
+                pfp.style.outlineColor = "rgba(189, 179, 208, " + (avg/512) + ")"
             }
         }, 1000 / 60)
 
