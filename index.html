@@ -63,6 +63,7 @@
 
         header>img {
             outline: 0px rgba(255,255,255,0.5) solid;
+            margin-bottom: 50px;
         }
         
         header p span {
@@ -729,7 +730,6 @@
                 ctx.fill()
             }
             if (!audiosource.paused){
-                // ignore high frequencies
                 analyser.getByteFrequencyData(data)
                 var total = 0
                 for (var i = 0; i < data.length; i++) {
