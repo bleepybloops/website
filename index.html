@@ -616,7 +616,7 @@
             </div> -->
         </div>
     </section>
-
+<!-- 
     <section>
         <h3>drop a file anywhere on this page</h3>
         <p>you can also paste a youtube or soundcloud link anywhere on this page to convert it to mp3</p>
@@ -630,7 +630,7 @@
 
         <div id="uploads"></div>
         
-    </section>
+    </section> -->
 
         
     <!-- <section>
@@ -854,6 +854,9 @@
             if (text.length <= 0) return
             if (text.match(/(?:http?s?:\/\/)?(?:www.)?(?:m.)?(?:music.)?youtu(?:\.?be)(?:\.com)?(?:(?:\w*.?:\/\/)?\w*.?\w*-?.?\w*\/(?:embed|e|v|watch|.*\/)?\??(?:feature=\w*\.?\w*)?&?(?:v=)?\/?)([\w\d_-]{11})(?:\S+)?/)) {
                 alert("Got youtube link: "+text)
+                // SEND TO server
+                // WHEN I GET IT BACK
+                // DOWNLOAD IT
             }else if (text.match(/^(?:(https?):\/\/)?(?:(?:www|m)\.)?(soundcloud\.com|snd\.sc)\/(.*)$/)) {
                 alert("Got soundcloud link: "+text)
             } else {
