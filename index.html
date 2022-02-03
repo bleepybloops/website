@@ -688,10 +688,11 @@
         // audio.setAttribute("style", "display:none;")
         // document.body.appendChild(audio)
 
-        document.querySelectorAll('audio').onplay = () => {
+        document.querySelectorAll('audio').onplay = (e) => {
+            playingAudio = e
             // pause all other audio
             document.querySelectorAll('audio').forEach(e => {
-                if (e != audio) e.paused = true
+                if (e != playingAudio) e.paused = true
             })
             // audio.src = e.src
             // console.log(audio.src)
