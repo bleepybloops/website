@@ -655,6 +655,49 @@
     <p style="cursor:pointer;z-index:5;" title="Click to copy eth address" onclick="navigator.clipboard.writeText('0x63684D8D9F26e18241166f8F31384949Aa0f858B')">&copy; 2022 lyra cooley &middot; eth: 0x63684D8D9F26e18241166f8F31384949Aa0f858B</p>
 
     <script>
+        
+        // make hidden audio element to read analyzer data from
+        // it will be ghost controlled by the visible audio elements
+        // so that the audio elements can be controlled independently
+        // but I can analyze just one audio element so I dont have to give them all IDs
+        audio = document.createElement("audio")
+        audio.setAttribute("autoplay", "")
+        audio.setAttribute("loop", "")
+        audio.setAttribute("crossorigin", "anonymous")
+        audio.setAttribute("style", "display:none;")
+        document.body.appendChild(audio)
+        // when an audio is played, switch the hidden audio src to that element
+        // and hijack the controls
+        
+
+        document.querySelectorAll('audio').onplay = (e) => {
+            playingAudio = e
+            // pause all other audio
+            document.querySelectorAll('audio').forEach(e => {
+                if (e != playingAudio) e.paused = true
+            })
+            // audio.src = e.src
+            // console.log(audio.src)
+            // make audio context and analyzer from source etc etc
+        }
+
+        // visualizer
+        // audiosource = document.getElementById("kenopsiaplayer")
+        // actx = new AudioContext()
+        // analyser = actx.createAnalyser()
+        // analyser.fftSize = 2048
+        // source = actx.createMediaElementSource(audiosource)
+        // source.connect(analyser)
+        // analyser.connect(actx.destination)
+        // data = new Uint8Array(analyser.frequencyBinCount)
+        // audiosource.onplay = () => {
+        //     actx.resume()
+        // }
+        // audiosource.onpause = () => {
+        //     pfp = document.querySelector('header>img')
+        //     pfp.style.outlineWidth = "0px"
+        // }
+
         // particles
         canvas = document.getElementById("bg")
         ctx = canvas.getContext("2d")
@@ -682,45 +725,6 @@
             particles.push(initParticle())
         }
 
-        // make hidden audio element to read analyzer data from
-        // it will be ghost controlled by the visible audio elements
-        // so that the audio elements can be controlled independently
-        // but I can analyze just one audio element so I dont have to give them all IDs
-        // audio = document.createElement("audio")
-        // audio.setAttribute("autoplay", "")
-        // audio.setAttribute("loop", "")
-        // audio.setAttribute("crossorigin", "anonymous")
-        // audio.setAttribute("style", "display:none;")
-        // document.body.appendChild(audio)
-
-        document.querySelectorAll('audio').onplay = (e) => {
-            playingAudio = e
-            // pause all other audio
-            document.querySelectorAll('audio').forEach(e => {
-                if (e != playingAudio) e.paused = true
-            })
-            // audio.src = e.src
-            // console.log(audio.src)
-            // make audio context and analyzer from source etc etc
-        }
-
-        // visualizer
-        audiosource = document.getElementById("kenopsiaplayer")
-        actx = new AudioContext()
-        analyser = actx.createAnalyser()
-        analyser.fftSize = 2048
-        source = actx.createMediaElementSource(audiosource)
-        source.connect(analyser)
-        analyser.connect(actx.destination)
-        data = new Uint8Array(analyser.frequencyBinCount)
-        audiosource.onplay = () => {
-            actx.resume()
-        }
-        audiosource.onpause = () => {
-            pfp = document.querySelector('header>img')
-            pfp.style.outlineWidth = "0px"
-        }
-
         setInterval(function() {
             ctx.clearRect(0, 0, canvas.width, canvas.height)
 
@@ -741,19 +745,19 @@
                 ctx.fillStyle = "rgba(255, 255, 255, " + particles[p].alpha + ")"
                 ctx.fill()
             }
-            if (!audiosource.paused){
-                analyser.getByteFrequencyData(data)
-                var total = 0
-                for (var i = 0; i < data.length; i++) {
-                    total += data[i]
-                }
-                var avg = total / data.length
-                pfp = document.querySelector('header>img')
-                pfp.style.outlineWidth = (80 * avg/255) + "px"
-                // 189, 179, 208
-                // https://convertingcolors.com/rgb-color-20_11_34.html
-                pfp.style.outlineColor = "rgba(189, 179, 208, " + (avg/512) + ")"
-            }
+            // if (!audiosource.paused && audiosource != null) {
+            //     analyser.getByteFrequencyData(data)
+            //     var total = 0
+            //     for (var i = 0; i < data.length; i++) {
+            //         total += data[i]
+            //     }
+            //     var avg = total / data.length
+            //     pfp = document.querySelector('header>img')
+            //     pfp.style.outlineWidth = (80 * avg/255) + "px"
+            //     // 189, 179, 208
+            //     // https://convertingcolors.com/rgb-color-20_11_34.html
+            //     pfp.style.outlineColor = "rgba(189, 179, 208, " + (avg/512) + ")"
+            // }
         }, 1000 / 60)
 
         isDescendantOf = (parent, child) => {
