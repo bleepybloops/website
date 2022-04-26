@@ -536,6 +536,11 @@
             margin-right: 5px;
             cursor: pointer;
         }
+        .commentercontainer {
+            display: flex;
+            flex-direction: row;
+            width:100%;
+        }
 
         ::-webkit-scrollbar-thumb {
             background-color: #333;
@@ -763,7 +768,7 @@
     <section>
         <!--  style="max-height: 125vh;overflow-y:scroll;overflow-x:hidden;padding-top:50px;padding-bottom:50px;" -->
         <h3>mom: we have twitter at home<br>twitter at home:</h3>
-        <div style="display: flex;flex-direction: row;width:100%;">
+        <div class="commentercontainer">
             <input type="file" name="commentuploader" id="commentuploader" multiple>
             <label for="commentuploader">📷</label>
             <input type="text" id="commentinput" placeholder="type a comment... [this won't work]">
