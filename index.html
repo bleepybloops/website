@@ -379,6 +379,7 @@
 
         #commentinput {
             width: 60%;
+            height: 50px;
             display: block;
             margin: 15px auto;
             padding: 10px;
@@ -387,10 +388,11 @@
             color: white;
             background: none;
             resize: vertical;
-            font-size: 12px;
+            transition: background-color 0.1s;
         }
         #commentinput:focus {
             outline: none;
+            background-color: #282341;
         }
 
         @media screen and (max-width: 1500px) {
@@ -697,7 +699,7 @@
 
     <section>
         <h3>comments test</h3>
-        <textarea id="commentinput" placeholder="type a comment here"></textarea>
+        <textarea id="commentinput" placeholder="type a comment here, ctrl+enter to send"></textarea>
         <div class="comment"><img class="avatar" src="https://i.imgur.com/NK6wIcz.png">hi this is just some random bullshit :)</div>
         <div class="comment"><img class="avatar" src="https://i.imgur.com/NK6wIcz.png">this is a comment with an image
         <img src="https://images.dailyhive.com/20200304165455/45567678_203310013913689_5532341007236481724_n-e1583369720706.jpg"></div>
