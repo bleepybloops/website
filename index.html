@@ -419,13 +419,6 @@
             outline: none;
             background-color: #282341;
         }
-        ::placeholder {
-            color: white;
-            opacity: 1;
-        }
-        ::-ms-input-placeholder {
-            color: white;
-        }
 
         @media screen and (max-width: 1500px) {
             section {
@@ -527,25 +520,32 @@
             cursor: pointer;
         }
 
-         ::-webkit-scrollbar-thumb {
+        ::-webkit-scrollbar-thumb {
             background-color: #333;
             border: 4px solid transparent;
             border-radius: 8px;
             background-clip: padding-box;
         }
-        
-         ::-webkit-scrollbar-thumb:hover {
+        ::-webkit-scrollbar-thumb:hover {
             background-color: #888;
         }
-        
-         ::-webkit-scrollbar {
+        ::-webkit-scrollbar {
             background: black;
             background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgb(20, 11, 34) 100%);
             width: 16px;
         }
-        
-         ::-webkit-scrollbar-corner {
+        ::-webkit-scrollbar-corner {
             background: rgba(0, 0, 0, 0);
+        }
+
+        ::placeholder {
+            color: white;
+            opacity: 1;
+            text-align: center;
+        }
+        ::-ms-input-placeholder {
+            color: white;
+            text-align: center;
         }
 
     </style>
