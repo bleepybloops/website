@@ -402,6 +402,17 @@
             padding:0;
         }
 
+        label[for=commentuploader] {
+            margin-right: 5px;
+            cursor: pointer;
+            width: 48px;
+            height: 48px;
+        }
+        .commentercontainer {
+            display: flex;
+            flex-direction: row;
+            width: 60%;
+        }
         #commentinput {
             width: 60%;
             height: 50px;
@@ -419,6 +430,19 @@
             outline: none;
             background-color: #282341;
         }
+        #commentbutton {
+            margin-left: 5px;
+            border: 2px solid #282341;
+            border-radius: 10px;
+            padding: 5px;
+            background: none;
+            cursor: pointer;
+            transition: background-color 0.1s;
+        }
+        #commentbutton:hover {
+            background: #282341;
+        }
+        
 
         @media screen and (max-width: 1500px) {
             section {
@@ -521,28 +545,6 @@
             position: relative;
             margin-top: -20px;
             cursor: pointer;
-        }
-
-        #commentbutton {
-            margin-left: 5px;
-            border: 2px solid #282341;
-            border-radius: 10px;
-            padding: 5px;
-            background: none;
-            cursor: pointer;
-            transition: background-color 0.1s;
-        }
-        #commentbutton:hover {
-            background: #282341;
-        }
-        label[for=commentuploader] {
-            margin-right: 5px;
-            cursor: pointer;
-        }
-        .commentercontainer {
-            display: flex;
-            flex-direction: row;
-            width: 60%;
         }
 
         ::-webkit-scrollbar-thumb {
