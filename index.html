@@ -399,11 +399,17 @@
         .comment div {
             display: flex;
             flex-direction: column;
-            align-items: center;
             margin:0;
             padding:0;
         }
 
+        .commentercontainer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 60%;
+            padding: 0;
+        }
         label[for=commentuploader] {
             margin-right: 5px;
             cursor: pointer;
@@ -418,12 +424,6 @@
             border-radius: 50px;
             font-size: 20px;
             background-color: #282341;
-        }
-        .commentercontainer {
-            display: flex;
-            flex-direction: row;
-            width: 60%;
-            padding: 0;
         }
         #commentinput {
             width: 60%;
