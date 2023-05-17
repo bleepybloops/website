@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#000000">
+    <script src="https://unpkg.com/wavesurfer.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
     <style>
@@ -642,7 +643,8 @@
             <em>granulator type beat</em>
             <audio src="" crossorigin="anonymous" controls></audio>
         </div> -->
-        <div class="audioplayer ">
+        
+<!--         <div class="audioplayer ">
             <em>wip</em>
             <audio src="https://storage.googleapis.com/lyras-music/wip.flac" crossorigin="anonymous" controls></audio>
         </div>
@@ -657,7 +659,25 @@
         <div class="audioplayer">
             <em>kirby space house</em>
             <audio src="https://storage.googleapis.com/lyras-music/kirby%20space%20house%20better%20drop.flac" crossorigin="anonymous" controls></audio>
+        </div> -->
+        
+        <div class="audioplayer" id="player1">
+            <em>wip</em>
+            <div class="waveform"></div>
         </div>
+        <div class="audioplayer" id="player2">
+            <em>vibies</em>
+            <div class="waveform"></div>
+        </div>
+        <div class="audioplayer" id="player3">
+            <em>eleverix - kenopsia remix</em>
+            <div class="waveform"></div>
+        </div>
+        <div class="audioplayer" id="player4">
+            <em>kirby space house</em>
+            <div class="waveform"></div>
+    </div>
+        
         <div class="audioplayer hiddenplayer hidden">
             <em>lafa taylor - thunder remix</em>
             <audio src="https://storage.googleapis.com/lyras-music/thunder%20remix%208%20fixed%20maybe.flac" crossorigin="anonymous" controls></audio>
@@ -1103,6 +1123,45 @@
                 console.log("Not a youtube or soundcloud link: "+text)
             }
         }
+        
+        document.addEventListener("DOMContentLoaded", function () {
+        // Create a list of audio file URLs
+        const audioFiles = [
+                "https://storage.googleapis.com/lyras-music/wip.flac",
+                "https://storage.googleapis.com/lyras-music/vibies%204.flac",
+                "https://storage.googleapis.com/lyras-music/kenopsia%20remix%207.flac",
+                "https://storage.googleapis.com/lyras-music/kirby%20space%20house%20better%20drop.flac",
+            ];
+
+        // Initialize wavesurfer instances for each audio player
+        audioFiles.forEach((audioFile, index) => {
+            const player = document.getElementById(`player${index + 1}`);
+            const waveform = player.querySelector(".waveform");
+
+            const wavesurfer = WaveSurfer.create({
+                container: waveform,
+                waveColor: "rgba(255, 255, 255, 0.5)",
+                progressColor: "rgba(255, 255, 255, 1)",
+                barWidth: 2,
+                cursorColor: "rgba(255, 255, 255, 1)",
+                backend: "MediaElement",
+            });
+
+            wavesurfer.load(audioFile);
+
+            // Pause other players when one is playing
+            wavesurfer.on("play", function () {
+                WaveSurfer.util
+                    .toArray(document.querySelectorAll(".waveform"))
+                    .forEach((el) => {
+                        const otherWavesurfer = WaveSurfer.getInstance(el);
+                        if (otherWavesurfer !== wavesurfer) {
+                            otherWavesurfer.pause();
+                        }
+                    });
+            });
+        });
+    });
 
     </script>
 
