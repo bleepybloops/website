@@ -211,17 +211,6 @@
             margin-bottom: 10px;
             resize: vertical;
         }
-/*         
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin: 10px 0;
-            width: 100%;
-        } */
 
         details {
             width: 100%;
@@ -283,58 +272,7 @@
         div.tiles a:hover {
             text-decoration: none;
         }
-
-        /* section {
-            width: 70%;
-            display: block;
-        } */
-        
-        input[type=file] {
-            display: none;
-        }
-        
-        label[for="uploader"] {
-            display: block;
-            width: 50%;
-            height: 50px;
-            padding: 15px;
-            background: none;
-            border: 2px solid #282341;
-            border-radius: 10px;
-            text-align: center;
-            cursor: pointer;
-            transition: background-color 0.1s;
-        }
-        
-        label[for="uploader"]:hover {
-            background: #282341;
-        }
-        
-        progress {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            width: 50%;
-        }
-        
-        #uploads {
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            column-gap: 20px;
-        }
-        
-        #uploads img,
-        #uploads video,
-        #uploads p {
-            width: 100%;
-            height: auto;
-        }
-        
-        #uploads audio {
-            width: 100%;
-            height: 50px;
-        }
-
+    
         .button.purple {
             display: block;
             width: 50%;
@@ -352,120 +290,6 @@
         .button.purple:hover {
             background: #282341;
         }
-
-        .comment {
-            width: 60%;
-            /* display: block; */
-            margin: 10px auto;
-            padding: 15px;
-            border: 2px solid #282341;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: row;
-            /* flex-flow: row wrap; */
-        }
-
-        .comment img {
-            width: calc(100% + 63px);
-            height: auto;
-            display: block;
-            margin-top: 15px;
-            border-radius: 10px;
-            margin-left: -63px;
-        }
-        .comment img.avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50px;
-            margin-right: 15px;
-            margin-top: 0px;
-            margin-left: 0px;
-            float: left;
-            shape-outside: circle();
-            /* margin-bottom: 2px; */
-        }
-        .comment em {
-            display: block;
-            margin-bottom: 8px;
-            margin-top: 0;
-            font-style: normal;
-        }
-        .comment p {
-            display: block;
-            margin-bottom: 0;
-            padding-bottom: 0;
-            font-style: normal;
-        }
-
-        .comment div {
-            display: flex;
-            flex-direction: column;
-            margin:0;
-            padding:0;
-        }
-
-        .commentercontainer {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            width: 60%;
-            padding: 0;
-            margin-bottom: 15px;
-        }
-        label[for=commentuploader] {
-            margin-right: 10px;
-            cursor: pointer;
-            width: 48px;
-            height: 48px;
-            border-radius: 50px;
-            display: block;
-            text-align: center;
-            line-height: 42px;
-            color: white;
-            border: 2px solid #282341;
-            border-radius: 50px;
-            font-size: 18px;
-        }
-        label[for=commentuploader]:hover {
-            background: #282341;
-        }
-        #commentinput {
-            width: 60%;
-            height: 50px;
-            display: block;
-            /* margin: 15px auto; */
-            margin-bottom: 0;
-            padding: 10px 15px;
-            border: 2px solid #282341;
-            border-radius: 50px;
-            color: white;
-            background: none;
-            resize: vertical;
-            transition: background-color 0.1s;
-            flex: 1;
-        }
-        #commentinput:focus {
-            outline: none;
-            background-color: #282341;
-        }
-        #commentbutton {
-            display: block;
-            width: 48px;
-            height: 48px;
-            margin-left: 10px;
-            border: 2px solid #282341;
-            border-radius: 50px;
-            padding: 5px;
-            background: none;
-            color: white;
-            cursor: pointer;
-            font-size: 18px;
-            transition: background-color 0.1s;
-        }
-        #commentbutton:hover {
-            background: #282341;
-        }
-        
 
         @media screen and (max-width: 1500px) {
             section {
@@ -517,9 +341,6 @@
                 margin-right: 0;
                 width: 40%;
             }
-            .imageboard {
-                grid-template-columns: 1fr;
-            }
             .audioplayer {
                 flex-direction: column;
                 margin-bottom: 5px;
@@ -528,35 +349,6 @@
                 width: 100%;
                 text-align: left;
                 padding: 5px 15px;
-            }
-            label[for="uploader"] {
-                width: 90%;
-            }
-            progress {
-                width: 90%;
-            }
-            header p {
-                margin-bottom: 0px;
-            }
-            .button.purple {
-                margin: 15px auto 0px auto;
-            }
-            .comment {
-                width: 100%;
-                display: block;
-            }
-            .comment div {
-                display: block;
-            }
-            .comment img {  
-                width: 100%;
-                margin-left: 0;   
-            }
-            #commentinput {
-                width: 100%;
-            }
-            .commentercontainer {
-                width: 100%;
             }
         }
         
@@ -635,11 +427,7 @@
 
         <!-- releases -->
         <!-- template:
-        <div class="audioplayer hiddenplayer hidden">
-            <em></em>
-            <audio src="" controls></audio>
-        </div> -->
-        <!-- <div class="audioplayer">
+        <div class="audioplayer">
             <em>granulator type beat</em>
             <audio src="" crossorigin="anonymous" controls></audio>
         </div> -->
@@ -671,34 +459,14 @@
             <em>what genre is this (2nd drop unfinished)</em>
             <audio src="https://storage.googleapis.com/lyras-music/hyperdeath%20pack%20110.flac" crossorigin="anonymous" controls></audio>
         </div>
-        <!-- <div class="audioplayer hiddenplayer hidden">
-            <em>vibies</em>
-            <audio src="https://storage.googleapis.com/lyras-music/vibies%204.flac" crossorigin="anonymous" controls></audio>
-        </div> -->
         <div class="audioplayer hiddenplayer hidden">
             <em>wip (2nd drop unfinished)</em>
             <audio src="https://storage.googleapis.com/lyras-music/wip.flac" crossorigin="anonymous" controls></audio>
         </div>
-        <!-- <div class="audioplayer hiddenplayer hidden">
-            <em>starbutsr jellybsn</em>
-            <audio src="https://storage.googleapis.com/lyras-music/starbutsr%20jellybsn%205.flac" crossorigin="anonymous" controls></audio>
-        </div> -->
-        <!-- <div class="audioplayer hiddenplayer hidden ">
-            <em>heartbeat</em>
-            <audio src="https://storage.googleapis.com/lyras-music/heartbeat.flac" crossorigin="anonymous" controls></audio>
-        </div> -->
         <div class="audioplayer hiddenplayer hidden ">
             <em>sunrise</em>
             <audio src="https://storage.googleapis.com/lyras-music/sunrise%203.flac" crossorigin="anonymous" controls></audio>
         </div>
-        <!-- <div class="audioplayer hiddenplayer hidden ">
-            <em>succession theme remix</em>
-            <audio src="https://storage.googleapis.com/lyras-music/succession%20remix%201.flac" crossorigin="anonymous" controls></audio>
-        </div> -->
-        <!-- <div class="audioplayer hiddenplayer hidden ">
-            <em>bvssicy</em>
-            <audio src="https://storage.googleapis.com/lyras-music/bvssy%20v11.flac" crossorigin="anonymous" controls></audio>
-        </div> -->
         <div class="audioplayer hiddenplayer hidden">
             <em>if dnb was 7/8</em>
             <audio src="https://storage.googleapis.com/lyras-music/78%20drums%20maybe%20dnb%20vibes%20110bpm.flac" crossorigin="anonymous" controls></audio>
@@ -727,9 +495,42 @@
             <em>if virtual riot sees this</em>
             <audio src="https://storage.googleapis.com/lyras-music/if%20vr%20sees%20this%2023.flac" crossorigin="anonymous" controls></audio>
         </div>
-        <!-- <div class="audioplayer hiddenplayer hidden">
+        <div class="audioplayer hiddenplayer hidden">
+            <em>rumble dj tool</em>
+            <audio src="https://storage.googleapis.com/lyras-music/rumble%20dj%20tool.flac" crossorigin="anonymous" controls></audio>
+        </div>
+        <div class="audioplayer hiddenplayer hidden">
+            <em>chill bump - not today x bvssic - death sonata double (148.7 bpm lol)</em>
+            <audio src="https://storage.googleapis.com/lyras-music/bvssic%20and%20not%20today%20good%20bounce.flac" crossorigin="anonymous" controls></audio>
+        </div>
+        <div class="audioplayer hiddenplayer hidden">
+            <em>drink n drive (in minecraft) riddim snippet</em>
+            <audio src="https://storage.googleapis.com/lyras-music/drink%20and%20drive%20just%20drop.flac" crossorigin="anonymous" controls></audio>
+        </div>
+        <div class="audioplayer hiddenplayer hidden">
             <em>mouse</em>
             <audio src="https://storage.googleapis.com/lyras-music/mouse%203.flac" crossorigin="anonymous" controls></audio>
+        </div>
+        <div class="audioplayer hiddenplayer hidden ">
+            <em>vocoder abuse</em>
+            <audio src="https://storage.googleapis.com/lyras-music/bvssy%20v11.flac" crossorigin="anonymous" controls></audio>
+        </div>
+        <!-- 
+        <div class="audioplayer hiddenplayer hidden">
+            <em>vibies</em>
+            <audio src="https://storage.googleapis.com/lyras-music/vibies%204.flac" crossorigin="anonymous" controls></audio>
+        </div> -->
+        <!-- <div class="audioplayer hiddenplayer hidden">
+            <em>starbutsr jellybsn</em>
+            <audio src="https://storage.googleapis.com/lyras-music/starbutsr%20jellybsn%205.flac" crossorigin="anonymous" controls></audio>
+        </div> -->
+        <!-- <div class="audioplayer hiddenplayer hidden ">
+            <em>heartbeat</em>
+            <audio src="https://storage.googleapis.com/lyras-music/heartbeat.flac" crossorigin="anonymous" controls></audio>
+        </div> -->
+        <!-- <div class="audioplayer hiddenplayer hidden ">
+            <em>succession theme remix</em>
+            <audio src="https://storage.googleapis.com/lyras-music/succession%20remix%201.flac" crossorigin="anonymous" controls></audio>
         </div>
         <div class="audioplayer hiddenplayer hidden">
             <em>bad mix house song</em>
@@ -751,14 +552,6 @@
             <em>technooooo</em>
             <audio src="https://storage.googleapis.com/lyras-music/technooooo%206.flac" crossorigin="anonymous" controls></audio>
         </div> -->
-        <div class="audioplayer hiddenplayer hidden">
-            <em>rumble dj tool</em>
-            <audio src="https://storage.googleapis.com/lyras-music/rumble%20dj%20tool.flac" crossorigin="anonymous" controls></audio>
-        </div>
-        <div class="audioplayer hiddenplayer hidden">
-            <em>chill bump - not today x bvssic - death sonata double (148.7 bpm lol)</em>
-            <audio src="https://storage.googleapis.com/lyras-music/bvssic%20and%20not%20today%20good%20bounce.flac" crossorigin="anonymous" controls></audio>
-        </div>
         <div class="audioplayer hiddenplayer hidden">
             <em style="width: 100%;">a lot of these songs are unfinished and i like working on "finished" tracks, so i update these somewhat frequently. check back for changes!</em>
         </div>
@@ -792,69 +585,14 @@
             <div>
                 <a href="https://www.beatleader.xyz/u/151647" target="_blank">beat saber ?</a>
             </div>
-            
-            <!-- <div>
-                <a href="https://discord.gg/JTT8erMpjz" target="_blank">my discord server</a>
-            </div> -->
-            <!-- <div>
-                <a href="https://www.youtube.com/c/bleepybloops/videos" target="_blank">my youtube channel</a>
-            </div> -->
-            <!-- <div>
-                <a href="" target="_blank">[Filler content]</a>
-            </div>
-            <div>
-                <a href="" target="_blank">[Absolutely nothing]</a>
-            </div> -->
         </div>
     </section>
 
 
-    <p style="cursor:pointer;z-index:5;" >&copy; 2022 lyra</p>
+    <p style="cursor:pointer;z-index:5;" >&copy; 2023 lyra</p>
     <!-- title="Click to copy eth address" onclick="navigator.clipboard.writeText('0x63684D8D9F26e18241166f8F31384949Aa0f858B')" &middot; eth: 0x63684D8D9F26e18241166f8F31384949Aa0f858B -->
 
     <script>
-        
-        // make hidden audio element to read analyzer data from
-        // it will be ghost controlled by the visible audio elements
-        // so that the audio elements can be controlled independently
-        // but I can analyze just one audio element so I dont have to give them all IDs
-        audio = document.createElement("audio")
-        audio.setAttribute("autoplay", "")
-        audio.setAttribute("loop", "")
-        audio.setAttribute("crossorigin", "anonymous")
-        audio.setAttribute("style", "display:none;")
-        document.body.appendChild(audio)
-        // when an audio is played, switch the hidden audio src to that element
-        // and hijack the controls
-        
-
-        document.querySelectorAll('audio').onplay = (e) => {
-            playingAudio = e
-            // pause all other audio
-            document.querySelectorAll('audio').forEach(e => {
-                if (e != playingAudio) e.paused = true
-            })
-            // audio.src = e.src
-            // console.log(audio.src)
-            // make audio context and analyzer from source etc etc
-        }
-
-        // visualizer
-        // audiosource = document.getElementById("kenopsiaplayer")
-        // actx = new AudioContext()
-        // analyser = actx.createAnalyser()
-        // analyser.fftSize = 2048
-        // source = actx.createMediaElementSource(audiosource)
-        // source.connect(analyser)
-        // analyser.connect(actx.destination)
-        // data = new Uint8Array(analyser.frequencyBinCount)
-        // audiosource.onplay = () => {
-        //     actx.resume()
-        // }
-        // audiosource.onpause = () => {
-        //     pfp = document.querySelector('header>img')
-        //     pfp.style.outlineWidth = "0px"
-        // }
 
         // particles
         canvas = document.getElementById("bg")
@@ -903,19 +641,6 @@
                 ctx.fillStyle = "rgba(255, 255, 255, " + particles[p].alpha + ")"
                 ctx.fill()
             }
-            // if (!audiosource.paused && audiosource != null) {
-            //     analyser.getByteFrequencyData(data)
-            //     var total = 0
-            //     for (var i = 0; i < data.length; i++) {
-            //         total += data[i]
-            //     }
-            //     var avg = total / data.length
-            //     pfp = document.querySelector('header>img')
-            //     pfp.style.outlineWidth = (80 * avg/255) + "px"
-            //     // 189, 179, 208
-            //     // https://convertingcolors.com/rgb-color-20_11_34.html
-            //     pfp.style.outlineColor = "rgba(189, 179, 208, " + (avg/512) + ")"
-            // }
         }, 1000 / 60)
 
         isDescendantOf = (parent, child) => {
@@ -926,151 +651,6 @@
             }
             return false
         }
-
-        // drag and drop uploads
-        document.addEventListener("dragover", (e) => {
-            e.preventDefault()
-            document.getElementById("uploads").scrollTop = 0
-        })
-        processFiles = (e) => {
-            document.getElementById("uploadprogress").value = 0
-            e.preventDefault()
-            e.stopPropagation()
-            document.getElementById("uploadprogress").style.display = "block"
-            files = (e.dataTransfer?.files) || e.target?.files
-            console.log()
-            for (i = 0; i < files.length; i++) {
-                file = files[i]
-                console.log(file)
-                reader = new FileReader()
-                reader.onload = (e) => {
-                    if (file.type.match("image.*")) {
-                        img = new Image()
-                        img.src = window.URL.createObjectURL(file)
-                        img.onload = function() {
-                            window.URL.revokeObjectURL(this.src)
-                        }
-                        console.log("got img", img)
-                        document.getElementById("uploads").appendChild(img)
-                    } else if (file.type.match("audio.*")) {
-                        audio = new Audio()
-                        audio.src = window.URL.createObjectURL(file)
-                        audio.controls = "controls"
-                        audio.preload = null
-                        audio.onload = function() {
-                            window.URL.revokeObjectURL(this.src)
-                        }
-                        console.log("got audio", audio)
-                        document.getElementById("uploads").appendChild(audio)
-                    } else if (file.type.match("video.*")) {
-                        video = document.createElement("video")
-                        video.src = window.URL.createObjectURL(file)
-                        video.controls = true
-                        video.onload = function() {
-                            window.URL.revokeObjectURL(this.src)
-                        }
-                        console.log("got video", video)
-                        document.getElementById("uploads").appendChild(video)
-                    } else {
-                        text = document.createElement("p")
-                        reader1 = new FileReader()
-                        reader1.onload = (e) => {
-                            text.innerText = e.target.result.substring(0, 100)
-                        }
-                        reader1.readAsText(file)
-                        document.getElementById("uploads").appendChild(text)
-                    }
-                }
-
-                reader.readAsText(file)
-
-                // yourfiles.push(filename)
-                // localstorage.add(files, yourfiles)
-                // fetch("api", {
-                //     method: "POST",
-                //     body: file,
-                //     headers: {
-                //         "Content-Type": "application/octet-stream"
-                //     }
-                // })
-                // .then(res => res.json())
-                // .then(res => {
-                //     console.log(res)
-                //     document.getElementById("uploadprogress").value += res.progress
-                // draw the files
-                // yourfiles = localstorage.get(files)
-                // for (i = 0; i < yourfiles.length; i++) {
-                // draw each
-                // }
-                // }
-            }
-            // document.getElementById("uploadprogress").value = 100
-            progressor = setInterval(() => {
-                document.getElementById("uploadprogress").value++
-            }, 5)
-            setTimeout(() => {
-                document.getElementById("uploadprogress").style.display = "none"
-                clearInterval(progressor)
-            }, 1200)
-        }
-        document.addEventListener("drop", processFiles)
-//         document.onload = document.getElementById("uploadprogress").style.display = "none"
-        document.getElementById("uploader").addEventListener("change", processFiles)
-
-        document.onpaste = (e) => {
-            var text = e.clipboardData.getData('Text')
-            e.preventDefault()
-            if (text.length <= 0) return
-            if (text.match(/(?:http?s?:\/\/)?(?:www.)?(?:m.)?(?:music.)?youtu(?:\.?be)(?:\.com)?(?:(?:\w*.?:\/\/)?\w*.?\w*-?.?\w*\/(?:embed|e|v|watch|.*\/)?\??(?:feature=\w*\.?\w*)?&?(?:v=)?\/?)([\w\d_-]{11})(?:\S+)?/)) {
-                alert("Got youtube link: "+text)
-                // SEND TO server
-                // WHEN I GET IT BACK
-                // DOWNLOAD IT
-            }else if (text.match(/^(?:(https?):\/\/)?(?:(?:www|m)\.)?(soundcloud\.com|snd\.sc)\/(.*)$/)) {
-                alert("Got soundcloud link: "+text)
-            } else {
-                console.log("Not a youtube or soundcloud link: "+text)
-            }
-        }
-        
-        document.addEventListener("DOMContentLoaded", function () {
-        // Create a list of audio file URLs
-        const audioFiles = [
-                "https://storage.googleapis.com/lyras-music/wip.flac",
-                "https://storage.googleapis.com/lyras-music/vibies%204.flac",
-                "https://storage.googleapis.com/lyras-music/kenopsia%20remix%207.flac",
-                "https://storage.googleapis.com/lyras-music/kirby%20space%20house%20better%20drop.flac",
-            ];
-
-        // Initialize wavesurfer instances for each audio player
-        audioFiles.forEach((audioFile, index) => {
-            const player = document.getElementById(`player${index + 1}`);
-            const waveform = player.querySelector(".waveform");
-
-            const wavesurfer = WaveSurfer.create({
-                container: waveform,
-                waveColor: "rgba(255, 255, 255, 0.5)",
-                progressColor: "rgba(255, 255, 255, 1)",
-                barWidth: 2,
-                cursorColor: "rgba(255, 255, 255, 1)",
-                backend: "MediaElement",
-            });
-
-            wavesurfer.load(audioFile);
-
-            // Pause other players when one is playing
-            wavesurfer.on("play", function () {
-                WaveSurfer.util
-                    .toArray(document.querySelectorAll(".waveform"))
-                    .forEach((el) => {
-                        const otherWavesurfer = WaveSurfer.getInstance(el);
-                        if (otherWavesurfer !== wavesurfer) {
-                            otherWavesurfer.pause();
-                        }
-                    });
-            });
-        });
-    });
 
     </script>
 
